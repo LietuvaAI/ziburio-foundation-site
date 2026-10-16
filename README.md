@@ -15,25 +15,24 @@ The page is assembled, never composed. Body copy is verbatim from canon in `vili
 | Block | Source |
 |---|---|
 | One-liner | Duality Doctrine, `corpus/projects/culturenet-foundation.md` |
-| About, "Memory and intelligence, together" | `corpus/publications/2026-09-musu-eile-statyti.md`, appendix: the Foundation half of the shared statement |
-| The path, Programs rows | `voice/public-presence/surface-set-proposal-2026-09-20.md` §3; figures from `voice/public-presence/numbers-ruling-2026-09-24.md` only (326/513, 155 institutions, seven interns) |
+| Hero lede, the four steps, the three resources, the apprenticeship paragraph, "The thinking behind it", "Next: a method other communities can follow" | the LinkedIn About she approved on the Imminent brief's register, `voice/public-presence/foundation-first-launch-set-2026-10-15.md` block 4 (and the short bio's "young people from the community do much of the work") |
+| The two questions, the principle "The human being remains responsible for memory…" | `corpus/publications/2026-09-musu-eile-statyti.md`, appendix |
+| Figures | `voice/public-presence/numbers-ruling-2026-09-24.md` only: 326/513, 155 institutions, seven interns. The grant's "4,000-item" and "1816" are not in the ruling and are left off |
 | "operated independently by Žiburio Foundation" | `voice/public-presence/bio-set-2026-10-10.md`, without the clause that follows it |
-| Three stamped internship lines | `voice/public-presence/doctrine-lines.md`, Foundation room |
-| What stays human | Duality Doctrine ("cannot become an AI company", the scale sentence); the sovereignty clause in the `doctrine-lines.md` wording (required element); two stamped lines, `doctrine-lines.md` |
+| Three stamped internship lines; "Representation is not inheritance."; "A corpus is not a culture."; the sovereignty clause | `voice/public-presence/doctrine-lines.md` |
+| "Žiburio Foundation cannot become an AI company." | Duality Doctrine, the first sentence of its pair ([main] decision, 2026-10-15) |
 | Entity facts | culturenet-brain `docs/legal/entity-status.md`: Michigan nonprofit, formed 2026-08-18 |
-| Look | `voice/visual-look.md`, the white look she approved |
+| Look | `voice/visual-look.md` tokens, plus the school's navy `#3D4F6B` and the tricolor from the Žiburio mark (see `assets/README.md`) |
 
-Written fresh, and only these: navigation and section labels, link text, the Support placeholder line, the contact line, the footer.
+Written fresh, and only these: navigation and section labels, the Now/Next chips, link text, the hero tile captions ("Žiburys (the light)", "Metro Detroit"), the Support placeholder line, the contact line, the footer.
 
-## Edits to the verbatim statement (stealth hold)
+## Edits to canon text (stealth hold)
 
-CultureNet and Labs are not named on this site while the hold stands. The About statement is therefore its Foundation half:
+CultureNet and Labs are not named on this site while the hold stands. The September shared statement is used only for its two questions and its principle; its CultureNet paragraphs are not on the page. The path ends at Lietuva.AI; the CultureNet ring and the reciprocal link are removed. "Žiburio Foundation cannot become an AI company." stands alone, without its paired sentence.
 
-- "Žiburio Foundation and CultureNet were created around those two questions." → "Žiburio Foundation was created around those two questions."
-- "One asks what should be remembered…" → "It asks what should be remembered…", attached to "The Foundation protects the human responsibility."
-- Dropped whole: the CultureNet paragraph, "They are deliberately not the same institution.", "CultureNet develops the technological capacity.", "The other asks…", "Together they represent a different vision…:" (its bold claim kept on its own), "The two projects therefore meet at a simple principle:" (its bold principle kept), "CultureNet builds the instruments for discovery.", "Neither is complete without the other."
-- "What stays human": of the pair "Žiburio Foundation cannot become an AI company. CultureNet cannot become the owner of the cultural memory.", only the first sentence is on the page ([main] decision, 2026-10-15). The sovereignty clause was added in the doctrine-lines wording the same day.
-- The path ends at Lietuva.AI; the CultureNet ring and the reciprocal link are removed.
+## Design (2026-10-15, her direction: "cool and modern", "a cool technology foundation", not an AI template)
+
+White, Geist, mono labels, hairlines; the Foundation mark redrawn from the school's (`assets/`); navy as the brand ink; a tricolor rule; figures as tiles; the four steps as a track; programs as cards; the path as concentric rings; stamped lines in Instrument Serif. No analytics, no scripts, one HTML file.
 
 ## Now vs. research (Vilija, 2026-10-15; `voice/forbidden-language.md`)
 
