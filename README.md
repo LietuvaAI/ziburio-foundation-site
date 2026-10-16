@@ -32,9 +32,11 @@ CultureNet and Labs are not named on this site while the hold stands. The Septem
 
 ## Design (2026-10-15, her direction)
 
-Her words, in order: "cool and modern", "not look like AI but a cool technology foundation", then on the first two attempts "I don't like this at all", "the whole theme is totally off", "use the original logo, Žiburio", "I don't want the same design for the Foundation" (as lietuva.ai), "it needs to look tech and culture at the same time."
+Three passes were rejected: a Geist/white layout ("a blob of text", then "I don't like this at all"), the lietuva.ai theme ("the whole theme is totally off", "I don't want the same design for the Foundation"), and a cream/serif/mono layout ("looks like a generic Claude AI site"). Her direction: the original Žiburio logo; tech and culture at the same time.
 
-What stands: the original Žiburio mark unchanged as the logo (`assets/`), cream paper and the mark's navy, Fraunces for display (the culture), IBM Plex Sans and Mono for body and labels (the tech), the archive's folk-flower as the one ornament, a tricolor rule, and the hero's right side as a catalog record of the Foundation itself. Steps as a track, programs as cards, the path as rings, Our thinking on navy. No scripts, no analytics, one HTML file.
+This pass follows her verdicts from the ten CultureNet design rounds of 2026-09-28 (Claude Design canvas, design memory `labs-site-design-direction`). Accepted there and used here: a plain sans, pill buttons, real page scans drifting behind the hero, short statements on hairline rows. Rejected there and kept out here: mono eyebrows, numbered side markers, card grids, long prose, giant type, off-white ivory, the lietuva.ai look. The Foundation's own: white ground, Schibsted Grotesk, the original mark and its navy, one navy band, a tricolor rule. Not the CultureNet look: no dark ground, no Instrument Sans.
+
+**Image rights, before go-live:** the four scans in `assets/scans/` are archive photographs already public on lietuva.ai (1816 New Testament title page, a provenance inscription, a 1925–26 student notebook, a 1948 DP camp publication). Each needs its rights recorded under her permission-first rule before this page is public.
 
 ## Now vs. research (Vilija, 2026-10-15; `voice/forbidden-language.md`)
 

@@ -10,310 +10,214 @@
 <link rel="icon" href="favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{color-scheme:light;--paper:#F7F4EE;--paper-2:#EFEAE0;--ink:#1C2638;--navy:#3D4F6B;--navy-deep:#2A3850;--muted:#5F6878;--rule:#D9D3C6;--rust:#C8352B;--lt-y:#FDB913;--lt-g:#006A44;--lt-r:#C1272D;--shell:1180px}
+:root{color-scheme:light;--ground:#FFFFFF;--ink:#16203A;--navy:#2A3850;--text:#3B4456;--muted:#6B7385;--hair:#E3E6EC;--hair-dark:#3A4763;--shell:1200px}
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:84px}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,sans-serif;font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased}
-img,svg{max-width:100%}
-a{color:inherit}
-.shell{width:min(calc(100% - 56px),var(--shell));margin-inline:auto}
-.display{font-family:"Fraunces",Georgia,serif;font-weight:500;font-variation-settings:"opsz" 144;letter-spacing:-0.01em}
-.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase}
-.tricolor{height:3px;background:linear-gradient(90deg,var(--lt-y) 0 33.4%,var(--lt-g) 33.4% 66.7%,var(--lt-r) 66.7%)}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:"Schibsted Grotesk",system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.shell{width:min(calc(100% - 48px),var(--shell));margin-inline:auto}
+.h{font-weight:600;letter-spacing:-0.03em;line-height:1.04;margin:0}
+.p{font-size:17px;line-height:1.6;color:var(--text);margin:0;text-wrap:pretty}
+.pill{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 22px;border-radius:999px;font-size:15px;font-weight:500;background:var(--navy);color:#fff;border:1px solid var(--navy)}
+.pill:hover{background:var(--ink)}
+.pill-o{background:transparent;color:var(--navy);border-color:#C9CED8}
+.pill-o:hover{background:transparent;border-color:var(--navy)}
 
 /* header */
-.top{position:sticky;top:0;z-index:10;background:rgba(247,244,238,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
-.top .shell{display:flex;align-items:center;justify-content:space-between;gap:20px;height:72px}
-.logo{display:inline-flex;align-items:center;gap:14px;text-decoration:none;color:var(--navy)}
-.logo img{width:40px;height:40px;display:block;border-radius:3px}
-.logo b{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:1.3rem;line-height:1;letter-spacing:-0.01em;white-space:nowrap}
-.logo b span{font-weight:400}
-nav{display:flex;gap:26px}
-nav a{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;color:var(--muted)}
+header{position:relative;z-index:5}
+header .shell{display:flex;align-items:center;justify-content:space-between;gap:20px;height:84px}
+.logo{display:inline-flex;align-items:center;gap:12px}
+.logo img{width:40px;height:40px;border-radius:4px}
+.logo span{font-size:18px;font-weight:600;letter-spacing:-0.02em;color:var(--navy)}
+nav{display:flex;align-items:center;gap:28px}
+nav a{font-size:14px;font-weight:500;color:var(--muted)}
 nav a:hover{color:var(--navy)}
 
 /* hero */
-.hero{position:relative;background:var(--paper);background-image:radial-gradient(var(--rule) 1px,transparent 1px);background-size:22px 22px}
-.hero .shell{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:56px;align-items:center;padding:84px 0 56px}
-.eyebrow{display:flex;align-items:center;gap:12px;color:var(--rust);margin:0 0 26px}
-.eyebrow::before{content:"";width:28px;height:1px;background:var(--rust)}
-.hero h1{margin:0;font-size:clamp(2.7rem,5.4vw,4.6rem);line-height:1.0;color:var(--navy-deep);max-width:12em}
-.hero .thesis{max-width:34em;margin:28px 0 0;font-size:1.05rem;line-height:1.7;color:var(--ink)}
-.hero .thesis span{color:var(--muted)}
-.actions{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-block;padding:12px 20px;text-decoration:none;font-weight:500;font-size:.9rem;border:1px solid var(--navy);color:var(--navy);border-radius:3px}
-.btn.solid{background:var(--navy);color:#fff}
-.btn:hover{background:var(--navy-deep);border-color:var(--navy-deep);color:#fff}
-
-/* the record card */
-.record{background:var(--navy);color:#fff;border-radius:6px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(42,56,80,.5)}
-.record .head{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid rgba(255,255,255,.14)}
-.record .head .mono{color:rgba(255,255,255,.6)}
-.record .mark{display:grid;place-items:center;padding:30px 22px 10px}
-.record .mark img{width:150px;height:150px;border-radius:6px;box-shadow:0 0 0 1px rgba(255,255,255,.14)}
-.record dl{margin:0;padding:12px 22px 22px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:0 18px}
-.record dt{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);padding:10px 0;border-top:1px solid rgba(255,255,255,.12)}
-.record dd{margin:0;padding:9px 0;border-top:1px solid rgba(255,255,255,.12);font-size:.9rem}
-.record dd b{font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:1.25rem}
-.record dd a{text-decoration:none;color:#fff}
-.record dd a:hover{text-decoration:underline;text-underline-offset:3px}
-
-/* ornament row */
-.hero .ornament{display:flex;grid-template-columns:none;align-items:center;justify-content:center;gap:22px;padding:0 0 40px}
-.ornament::before,.ornament::after{content:"";flex:1;height:1px;background:var(--rule)}
-.ornament img{width:34px;height:auto;opacity:.9}
+.hero{position:relative;overflow:hidden}
+.hero .shell{position:relative;min-height:640px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:40px;padding:40px 0 88px}
+.hero h1{font-size:clamp(40px,4.6vw,60px);max-width:11.5em;color:var(--ink)}
+.hero .p{margin-top:24px;font-size:19px;max-width:30em}
+.hero .actions{margin-top:34px;display:flex;gap:10px;flex-wrap:wrap}
+.stage{position:relative;height:560px}
+.scan{position:absolute;object-fit:contain;filter:drop-shadow(0 26px 34px rgba(22,32,58,.22))}
+.s1{width:46%;left:30%;top:4%;transform:rotate(3deg)}
+.s2{width:42%;left:6%;top:16%;transform:rotate(-4deg)}
+.s3{width:36%;left:2%;top:56%;transform:rotate(-8deg)}
+.s4{width:34%;left:62%;top:48%;transform:rotate(6deg)}
+@keyframes drift{from{translate:0 0}to{translate:0 -36px}}
+@keyframes drift2{from{translate:0 0}to{translate:0 28px}}
+.d1{animation:drift 18s ease-in-out infinite alternate}
+.d2{animation:drift2 22s ease-in-out infinite alternate}
+.d3{animation:drift 26s ease-in-out infinite alternate-reverse}
+@media (prefers-reduced-motion:reduce){.d1,.d2,.d3{animation:none}}
+.stage figcaption{position:absolute;right:0;bottom:-6px;font-size:12.5px;color:var(--muted);text-align:right;max-width:26em;line-height:1.5}
+.tricolor{height:4px;background:linear-gradient(90deg,#FDB913 0 33.4%,#006A44 33.4% 66.7%,#C1272D 66.7%)}
 
 /* sections */
-section{padding:72px 0}
-section.alt{background:var(--paper-2)}
-section.navy{background:var(--navy-deep);color:#fff}
-.kicker{display:flex;align-items:baseline;gap:14px;margin:0 0 16px;color:var(--rust)}
-.kicker .n{font-family:"Fraunces",Georgia,serif;font-size:1.1rem;color:var(--navy)}
-section.navy .kicker{color:var(--lt-y)}
-section.navy .kicker .n{color:#fff}
-h2{margin:0;font-family:"Fraunces",Georgia,serif;font-weight:500;font-variation-settings:"opsz" 144;font-size:clamp(1.9rem,3.2vw,2.7rem);line-height:1.1;letter-spacing:-0.01em;color:var(--navy-deep);max-width:20em}
-section.navy h2{color:#fff}
-.lead{max-width:36em;margin:18px 0 0;color:var(--muted);font-size:1rem;line-height:1.7}
-.two{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:start}
-.state{display:inline-block;margin-left:12px;padding:2px 9px;border:1px solid currentColor;border-radius:999px;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;vertical-align:middle}
-.state.now{color:var(--lt-g)}
-.state.next{color:var(--rust)}
-section.navy .state.now{color:#9FD6B8}
-section.navy .state.next{color:var(--lt-y)}
+.sec{padding:104px 0;border-top:1px solid var(--hair)}
+.split{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:start}
+.sec h2{font-size:clamp(30px,3.2vw,42px);max-width:13em}
+.sec .intro{margin-top:18px;max-width:26em}
+.rows{border-bottom:1px solid var(--hair)}
+.row{display:grid;grid-template-columns:180px minmax(0,1fr);column-gap:32px;padding:24px 0;border-top:1px solid var(--hair)}
+.row-k{font-size:19px;font-weight:600;letter-spacing:-0.01em;margin:0;color:var(--ink)}
+.row-v{font-size:16.5px;line-height:1.6;color:var(--text);margin:0;text-wrap:pretty}
+a.row:hover .row-k{color:#0E6B4A}
+.row-v .url{display:block;margin-top:8px;font-size:13.5px;color:var(--muted)}
+a.row:hover .url{color:var(--navy)}
 
-/* steps */
-.steps{list-style:none;margin:44px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;position:relative}
-.steps::before{content:"";position:absolute;left:0;right:0;top:8px;height:1px;background:var(--navy)}
-.steps li{position:relative;padding:34px 26px 0 0}
-.steps li::before{content:"";position:absolute;top:2px;left:0;width:13px;height:13px;border-radius:50%;background:var(--paper);border:1px solid var(--navy)}
-.steps li:last-child::before{background:var(--navy)}
-.steps .n{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.68rem;letter-spacing:.14em;color:var(--rust)}
-.steps h3{margin:10px 0 8px;font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:1.5rem;color:var(--navy-deep)}
-.steps p{margin:0;color:var(--muted);font-size:.93rem;line-height:1.6;max-width:24em}
+/* apprenticeship */
+.quote{font-size:clamp(28px,3vw,40px);font-weight:500;letter-spacing:-0.025em;line-height:1.15;margin:0;color:var(--ink);max-width:16em}
+.stmts{margin-top:40px;border-bottom:1px solid var(--hair)}
+.stmt{display:flex;justify-content:space-between;gap:24px;align-items:baseline;font-size:22px;font-weight:500;letter-spacing:-0.015em;line-height:1.3;margin:0;padding:22px 0;border-top:1px solid var(--hair);color:var(--ink)}
+.stmt small{flex:none;font-size:13px;font-weight:500;letter-spacing:0;color:var(--muted)}
 
-/* programs */
-.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:40px}
-.card{display:flex;flex-direction:column;gap:12px;padding:26px 26px 22px;background:var(--paper);border:1px solid var(--rule);border-top:3px solid var(--navy);text-decoration:none;color:inherit;min-height:250px}
-.card:hover{border-color:var(--navy)}
-.card .k{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--rust)}
-.card h3{margin:0;font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:1.6rem;line-height:1.15;color:var(--navy-deep)}
-.card p{margin:0;color:var(--muted);font-size:.93rem;line-height:1.6;flex:1}
-.card .go{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.66rem;letter-spacing:.06em;color:var(--navy)}
+/* navy band */
+.band{background:var(--navy);color:#fff}
+.band .sec{border-top:0}
+.band h2{color:#fff}
+.band .p{color:#C9D0DD}
+.band .stmt{color:#fff;border-top-color:var(--hair-dark)}
+.band .stmts{border-bottom-color:var(--hair-dark)}
+.band .stmt small{color:#9BA6BA}
+.band .principle{margin-top:28px;font-size:20px;font-weight:500;line-height:1.45;color:#fff;max-width:26em}
 
-/* apprenticeship quotes */
-.quotes{list-style:none;margin:0;padding:0;border-top:1px solid var(--navy)}
-.quotes li{display:grid;grid-template-columns:70px minmax(0,1fr);gap:16px;padding:22px 0;border-bottom:1px solid var(--rule);align-items:start}
-.quotes p{margin:0;font-family:"Fraunces",Georgia,serif;font-style:italic;font-weight:400;font-variation-settings:"opsz" 72;font-size:clamp(1.35rem,2.3vw,1.8rem);line-height:1.25;color:var(--navy-deep)}
-.quotes .tag{margin-top:8px;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--lt-g)}
-.quotes .tag.next{color:var(--rust)}
+/* contact */
+.contact .split{align-items:center}
+.mail{font-size:clamp(22px,2.4vw,30px);font-weight:500;letter-spacing:-0.02em;color:var(--navy);border-bottom:1px solid #C9CED8;padding-bottom:4px;word-break:break-all}
+.mail:hover{border-color:var(--navy)}
 
-/* path */
-.rings{width:100%;max-width:420px;aspect-ratio:1;display:block;margin-top:28px}
-.rings circle{fill:none;stroke:var(--navy);stroke-width:1}
-.rings circle.core{fill:var(--navy)}
-.rings text{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:8.5px;letter-spacing:1.2px;fill:var(--navy)}
-.rings text.core{fill:#fff}
-.pathlist{list-style:none;margin:0;padding:0;border-top:1px solid var(--navy)}
-.pathlist li{display:grid;grid-template-columns:52px minmax(0,1fr);gap:16px;padding:18px 0;border-bottom:1px solid var(--rule);align-items:baseline}
-.pathlist .n{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.68rem;letter-spacing:.14em;color:var(--rust)}
-.pathlist h3{margin:0 0 2px;font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:1.35rem;color:var(--navy-deep)}
-.pathlist h3 a{text-decoration:none}
-.pathlist h3 a:hover{text-decoration:underline;text-underline-offset:4px}
-.pathlist p{margin:0;color:var(--muted);font-size:.92rem}
-
-/* thinking */
-.questions p{margin:0 0 20px;font-family:"Fraunces",Georgia,serif;font-weight:500;font-variation-settings:"opsz" 144;font-size:clamp(1.6rem,2.8vw,2.3rem);line-height:1.15;color:#fff;max-width:15em}
-.thinking p{margin:0 0 1em;color:rgba(255,255,255,.78);font-size:1rem;line-height:1.7;max-width:34em}
-.thinking .principle{color:#fff;font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:1.25rem;padding-top:16px;border-top:1px solid rgba(255,255,255,.2)}
-.lines{list-style:none;margin:26px 0 0;padding:0}
-.lines li{padding:12px 0;border-top:1px solid rgba(255,255,255,.16);font-family:"Fraunces",Georgia,serif;font-style:italic;font-size:1.3rem;line-height:1.3;color:#fff}
-.lines li:last-child{border-bottom:1px solid rgba(255,255,255,.16)}
-.nextline{margin-top:24px;display:flex;gap:14px;align-items:baseline;color:rgba(255,255,255,.78)}
-.nextline .state{margin:0}
-
-/* support */
-.panel{border:1px solid var(--rule);border-top:3px solid var(--navy);padding:26px 28px;background:var(--paper)}
-.panel p{margin:0 0 .4em}
-.panel .addr{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:.9rem;word-break:break-all}
-.panel .addr a{color:var(--navy)}
-
-/* footer */
-footer{background:var(--navy);color:rgba(255,255,255,.72)}
-footer .shell{padding:36px 0 44px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;font-size:.8rem}
-footer a{color:inherit}
-footer .logo{color:#fff}
+footer{border-top:1px solid var(--hair)}
+footer .shell{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;padding:32px 0 44px;font-size:13px;color:var(--muted)}
+footer nav{gap:20px}
+footer nav a{font-size:13px}
 
 @media (max-width:960px){
-  .hero .shell{grid-template-columns:minmax(0,1fr);gap:36px;padding-top:56px}
-  .record{max-width:440px}
-  .two{grid-template-columns:minmax(0,1fr);gap:32px}
-  .steps{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:36px}
-  .steps::before,.steps li::before{display:none}
-  .steps li{padding-top:0}
-  .cards{grid-template-columns:minmax(0,1fr)}
-  .card{min-height:0}
+  .hero .shell{grid-template-columns:minmax(0,1fr);min-height:0;padding-bottom:56px}
+  .stage{height:420px}
+  .split{grid-template-columns:minmax(0,1fr);gap:36px}
+  .sec{padding:72px 0}
 }
 @media (max-width:640px){
   .shell{width:min(calc(100% - 32px),var(--shell))}
-  nav{gap:14px}
-  nav a:nth-child(n+3){display:none}
-  .logo b{font-size:1.1rem}
-  .hero h1{font-size:clamp(2.3rem,10vw,3rem)}
-  .steps{grid-template-columns:minmax(0,1fr)}
-  .quotes li{grid-template-columns:minmax(0,1fr);gap:6px}
-  section{padding:56px 0}
+  header nav a:not(.pill){display:none}
+  .stage{height:330px}
+  .row{grid-template-columns:minmax(0,1fr);row-gap:6px}
+  .stmt{flex-direction:column;gap:6px;font-size:19px}
 }
 </style>
 </head>
 <body>
 
-<header class="top">
+<header>
   <div class="shell">
-    <a class="logo" href="#top" id="top" aria-label="Žiburio Foundation home"><img src="assets/ziburio-mark.png" alt=""><b>Žiburio <span>Foundation</span></b></a>
-    <nav aria-label="Sections">
-      <a href="#work">How we work</a>
-      <a href="#programs">Programs</a>
-      <a href="#thinking">Our thinking</a>
-      <a href="#support">Support</a>
+    <a class="logo" href="#top" id="top" aria-label="Žiburio Foundation home"><img src="assets/ziburio-mark.png" alt=""><span>Žiburio Foundation</span></a>
+    <nav aria-label="Primary">
+      <a href="#work">What we do</a>
+      <a href="#see">See the work</a>
+      <a href="#young">Young people</a>
+      <a class="pill" href="#contact">Contact</a>
     </nav>
   </div>
 </header>
 
 <main>
 
-<section class="hero" style="padding:0">
+<section class="hero">
   <div class="shell">
     <div>
-      <p class="eyebrow mono">A Michigan nonprofit · Metro Detroit</p>
-      <h1 class="display">We prepare our memory and our young people for the world they are inheriting.</h1>
-      <p class="thesis">Žiburio Foundation is the permanent steward of Lithuanian diaspora cultural memory. <span>The Foundation digitizes and opens diaspora archives with AI and human review, and young people from the community do much of the work.</span></p>
+      <h1 class="h">We prepare our memory and our young people for the world they are inheriting.</h1>
+      <p class="p">Žiburio Foundation, a Michigan nonprofit, is the permanent steward of Lithuanian diaspora cultural memory. It digitizes and opens diaspora archives with AI and human review, and young people from the community do much of the work.</p>
       <div class="actions">
-        <a class="btn solid" href="#work">How we work</a>
-        <a class="btn" href="https://archyvas.ziburioltmokykla.org" target="_blank" rel="noopener">Open the Archive</a>
+        <a class="pill" href="https://archyvas.ziburioltmokykla.org" target="_blank" rel="noopener">Open the Archive</a>
+        <a class="pill pill-o" href="#work">How it works</a>
       </div>
     </div>
-    <aside class="record" aria-label="The Foundation as a record">
-      <div class="head"><span class="mono">Record</span><span class="mono">ZF · 2026</span></div>
-      <div class="mark"><img src="assets/ziburio-mark.png" alt="Žiburio mark"></div>
-      <dl>
-        <dt>Type</dt><dd>Michigan nonprofit</dd>
-        <dt>Formed</dt><dd>2026-08-18</dd>
-        <dt>Steward of</dt><dd>Lithuanian diaspora cultural memory</dd>
-        <dt>Published</dt><dd><a href="https://archyvas.ziburioltmokykla.org" target="_blank" rel="noopener"><b>326</b> of 513 catalogued items</a></dd>
-        <dt>Registry</dt><dd><a href="https://saveourlithuanianparishes.org" target="_blank" rel="noopener"><b>155</b> Lithuanian institutions in the U.S.</a></dd>
-        <dt>Interns</dt><dd><b>7</b> students</dd>
-      </dl>
-      <div class="tricolor"></div>
-    </aside>
+    <figure class="stage" style="margin:0">
+      <img class="scan s2 d2" src="assets/scans/cover.webp" alt="Title page of an 1816 Lithuanian New Testament">
+      <img class="scan s1 d1" src="assets/scans/page.webp" alt="Handwritten family and parish provenance inscription">
+      <img class="scan s3 d3" src="assets/scans/diary.webp" alt="1925 to 1926 Lithuanian student notebook">
+      <img class="scan s4 d1" src="assets/scans/dp.webp" alt="1948 displaced persons camp publication">
+      <figcaption>From the Žiburio Archive, metro Detroit.</figcaption>
+    </figure>
   </div>
-  <div class="shell ornament" aria-hidden="true"><img src="assets/folk-flower.png" alt=""><img src="assets/folk-flower.png" alt=""><img src="assets/folk-flower.png" alt=""></div>
+  <div class="tricolor"></div>
 </section>
 
-<section id="work">
-  <div class="shell">
-    <p class="kicker mono"><span class="n">01</span> How we work <span class="state now">Now</span></p>
-    <h2>Every source passes through the same four steps.</h2>
-    <ol class="steps">
-      <li><span class="n">STEP 01</span><h3>Digitize</h3><p>The source is photographed, catalogued and preserved.</p></li>
-      <li><span class="n">STEP 02</span><h3>Extract</h3><p>AI reads it and identifies the people, places, institutions and events it mentions.</p></li>
-      <li><span class="n">STEP 03</span><h3>Review</h3><p>People check every identification, and uncertain cases are held for human judgment.</p></li>
-      <li><span class="n">STEP 04</span><h3>Link</h3><p>Each confirmed fact is tied to the page it appears on, so any claim can be traced back and verified.</p></li>
-    </ol>
-  </div>
-</section>
-
-<section class="alt" id="programs">
-  <div class="shell">
-    <p class="kicker mono"><span class="n">02</span> Programs <span class="state now">Now</span></p>
-    <h2>Three public resources draw on that work.</h2>
-    <div class="cards">
-      <a class="card" href="https://archyvas.ziburioltmokykla.org" target="_blank" rel="noopener"><span class="k">The sources</span><h3>Žiburio Archive</h3><p>A collection of Lithuanian books, periodicals and documents in metro Detroit. 326 published records from 513 catalogued items.</p><span class="go">archyvas.ziburioltmokykla.org ↗</span></a>
-      <a class="card" href="https://lietuva.ai" target="_blank" rel="noopener"><span class="k">The connected record · in beta</span><h3>Lietuva.AI</h3><p>The connected record, with every source cited and visible. Operated independently by Žiburio Foundation.</p><span class="go">lietuva.ai ↗</span></a>
-      <a class="card" href="https://saveourlithuanianparishes.org" target="_blank" rel="noopener"><span class="k">The record applied</span><h3>Save Our Lithuanian Parishes</h3><p>A public registry of 155 Lithuanian institutions in the United States.</p><span class="go">saveourlithuanianparishes.org ↗</span></a>
+<section class="sec" id="work">
+  <div class="shell split">
+    <div>
+      <h2 class="h">Every source passes through the same four steps.</h2>
+    </div>
+    <div class="rows">
+      <div class="row"><p class="row-k">Digitize</p><p class="row-v">The source is photographed, catalogued and preserved.</p></div>
+      <div class="row"><p class="row-k">Extract</p><p class="row-v">AI reads it and identifies the people, places, institutions and events it mentions.</p></div>
+      <div class="row"><p class="row-k">Review</p><p class="row-v">People check every identification, and uncertain cases are held for human judgment.</p></div>
+      <div class="row"><p class="row-k">Link</p><p class="row-v">Each confirmed fact is tied to the page it appears on, so any claim can be traced back and verified.</p></div>
     </div>
   </div>
 </section>
 
-<section id="apprenticeship">
-  <div class="shell">
-    <p class="kicker mono"><span class="n">03</span> The apprenticeship <span class="state now">Now</span></p>
-    <div class="two">
+<section class="sec" id="see">
+  <div class="shell split">
+    <div>
+      <h2 class="h">Three public resources draw on that work.</h2>
+    </div>
+    <div class="rows">
+      <a class="row" href="https://archyvas.ziburioltmokykla.org" target="_blank" rel="noopener"><p class="row-k">Žiburio Archive</p><p class="row-v">The sources. 326 published records from 513 catalogued items.<span class="url">archyvas.ziburioltmokykla.org ↗</span></p></a>
+      <a class="row" href="https://lietuva.ai" target="_blank" rel="noopener"><p class="row-k">Lietuva.AI</p><p class="row-v">The connected record, in beta, with every source cited and visible. Operated independently by Žiburio Foundation.<span class="url">lietuva.ai ↗</span></p></a>
+      <a class="row" href="https://saveourlithuanianparishes.org" target="_blank" rel="noopener"><p class="row-k">Save Our Lithuanian Parishes</p><p class="row-v">The record applied: a public registry of 155 Lithuanian institutions in the United States.<span class="url">saveourlithuanianparishes.org ↗</span></p></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="young">
+  <div class="shell split">
+    <div>
+      <h2 class="h">Skaitmeniniai Knygnešiai</h2>
+      <p class="p intro">Digital Book Carriers. Seven high-school interns scan and catalogue the archive's books, build their Lithuanian, and learn the responsible use of AI by working directly with primary sources.</p>
+    </div>
+    <div>
+      <p class="quote">An apprenticeship in cultural inheritance.</p>
+      <div class="stmts">
+        <p class="stmt">Learn to steward. Learn to notice. Make something from what you found. <small>Next</small></p>
+        <p class="stmt">Perhaps preservation becomes inheritance when someone new begins asking questions of it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <section class="sec">
+    <div class="shell split">
       <div>
-        <h2>Skaitmeniniai Knygnešiai <em style="font-weight:400;color:var(--muted)">(Digital Book Carriers)</em></h2>
-        <p class="lead">Much of the work is done by young people from the community. Through Skaitmeniniai Knygnešiai, its apprenticeship in cultural inheritance, high-school interns build their Lithuanian and learn the responsible use of AI by working directly with primary sources.</p>
-        <p class="lead">Seven student interns, scanning and cataloguing the archive's books.</p>
-      </div>
-      <ul class="quotes">
-        <li><span class="tag">Now</span><p>An apprenticeship in cultural inheritance.</p></li>
-        <li><span class="tag next">Next</span><p>Learn to steward. Learn to notice. Make something from what you found.</p></li>
-        <li><span></span><p>Perhaps preservation becomes inheritance when someone new begins asking questions of it.</p></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="alt" id="path">
-  <div class="shell">
-    <p class="kicker mono"><span class="n">04</span> The path</p>
-    <div class="two">
-      <div>
-        <h2>From the inside out.</h2>
-        <svg class="rings" viewBox="0 0 400 400" aria-hidden="true">
-          <circle cx="200" cy="200" r="190"/><circle cx="200" cy="200" r="142"/><circle cx="200" cy="200" r="94"/><circle cx="200" cy="200" r="46" class="core"/>
-          <text x="200" y="203" text-anchor="middle" class="core">PARISH</text>
-          <text x="200" y="121" text-anchor="middle">DETROIT</text>
-          <text x="200" y="73" text-anchor="middle">THE ARCHIVE</text>
-          <text x="200" y="25" text-anchor="middle">LIETUVA.AI</text>
-        </svg>
-      </div>
-      <ol class="pathlist">
-        <li><span class="n">01</span><div><h3>Parish</h3><p>Divine Providence Lithuanian Catholic Church, metro Detroit.</p></div></li>
-        <li><span class="n">02</span><div><h3>Detroit</h3><p>The Lithuanian community's record.</p></div></li>
-        <li><span class="n">03</span><div><h3><a href="https://archyvas.ziburioltmokykla.org" target="_blank" rel="noopener">The Archive</a></h3><p>326 published records from 513 catalogued items.</p></div></li>
-        <li><span class="n">04</span><div><h3><a href="https://lietuva.ai" target="_blank" rel="noopener">Lietuva.AI</a></h3><p>Operated independently by Žiburio Foundation.</p></div></li>
-      </ol>
-    </div>
-  </div>
-</section>
-
-<section class="navy" id="thinking">
-  <div class="shell">
-    <p class="kicker mono"><span class="n">05</span> Our thinking · research and next steps, labeled</p>
-    <div class="two">
-      <div class="questions">
-        <p>How will we prepare our memory for the world that is coming?</p>
-        <p>How will we prepare our young people to live responsibly within it?</p>
-      </div>
-      <div class="thinking">
-        <p>AI can now speak fluently about any culture, but fluency is not truth. A culture is represented accurately only when its own records are preserved with their sources, context and connections intact, so that meaning is drawn from evidence rather than generated. Communities whose memory exists in this form will be understood on their own terms.</p>
+        <h2 class="h">How will we prepare our memory, and our young people, for the world that is coming?</h2>
         <p class="principle">The human being remains responsible for memory. AI helps us see more within it.</p>
-        <ul class="lines">
-          <li>Žiburio Foundation cannot become an AI company.</li>
-          <li>The community holds its own memory, governs access to it, builds its own intelligence from it, and does not lose it.</li>
-          <li>Representation is not inheritance.</li>
-          <li>A corpus is not a culture.</li>
-        </ul>
-        <div class="nextline"><span class="state next">Next</span><span>A method other communities can follow.</span></div>
+      </div>
+      <div class="stmts">
+        <p class="stmt">Žiburio Foundation cannot become an AI company.</p>
+        <p class="stmt">The community holds its own memory, governs access to it, builds its own intelligence from it, and does not lose it.</p>
+        <p class="stmt">Representation is not inheritance.</p>
+        <p class="stmt">A corpus is not a culture.</p>
+        <p class="stmt">A method other communities can follow. <small>Next</small></p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+  <div class="tricolor"></div>
+</div>
 
-<section id="support">
-  <div class="shell">
-    <p class="kicker mono"><span class="n">06</span> Support</p>
-    <div class="two">
-      <div>
-        <h2>Support the work.</h2>
-        <p class="lead">Žiburio Foundation is a Michigan nonprofit. Ways to support the work will be listed here.</p>
-      </div>
-      <div class="panel">
-        <p class="mono" style="color:var(--rust)">Write to us</p>
-        <p style="margin-top:10px">Vilija Jurgutis, Executive Director</p>
-        <p class="addr"><a href="mailto:vjurgutis@ziburiofoundation.org">vjurgutis@ziburiofoundation.org</a></p>
-      </div>
+<section class="sec contact" id="contact">
+  <div class="shell split">
+    <div>
+      <h2 class="h">Support the work.</h2>
+      <p class="p intro">Žiburio Foundation is a Michigan nonprofit. Ways to support the work will be listed here. Write to Vilija Jurgutis, Executive Director.</p>
+    </div>
+    <div>
+      <a class="mail" href="mailto:vjurgutis@ziburiofoundation.org">vjurgutis@ziburiofoundation.org</a>
     </div>
   </div>
 </section>
@@ -321,11 +225,14 @@ footer .logo{color:#fff}
 </main>
 
 <footer>
-  <div class="tricolor"></div>
   <div class="shell">
-    <a class="logo" href="#top" aria-label="Žiburio Foundation"><img src="assets/ziburio-mark.png" alt=""><b>Žiburio <span>Foundation</span></b></a>
+    <a class="logo" href="#top" aria-label="Žiburio Foundation"><img src="assets/ziburio-mark.png" alt=""><span>Žiburio Foundation</span></a>
     <span>© 2026 Žiburio Foundation · Michigan</span>
-    <span><a href="https://lietuva.ai" target="_blank" rel="noopener">lietuva.ai</a> &nbsp;·&nbsp; <a href="https://archyvas.ziburioltmokykla.org" target="_blank" rel="noopener">Žiburio Archive</a> &nbsp;·&nbsp; <a href="https://saveourlithuanianparishes.org" target="_blank" rel="noopener">Save Our Lithuanian Parishes</a></span>
+    <nav aria-label="Public resources">
+      <a href="https://archyvas.ziburioltmokykla.org" target="_blank" rel="noopener">Žiburio Archive</a>
+      <a href="https://lietuva.ai" target="_blank" rel="noopener">Lietuva.AI</a>
+      <a href="https://saveourlithuanianparishes.org" target="_blank" rel="noopener">Save Our Lithuanian Parishes</a>
+    </nav>
   </div>
 </footer>
 
