@@ -42,12 +42,8 @@ nav a:hover{color:var(--navy)}
 .hero h1{font-size:clamp(34px,3.9vw,52px);font-weight:600;color:var(--ink);max-width:15em}
 .hero .p{margin-top:26px;font-size:19px;max-width:31em}
 .actions{margin-top:34px;display:flex;gap:10px;flex-wrap:wrap}
-.stage{position:relative;height:600px;margin:0}
-.book{position:absolute;border-radius:3px;box-shadow:0 2px 3px rgba(20,28,51,.18),0 30px 50px -18px rgba(20,28,51,.38)}
-.b1{width:44%;left:6%;top:6%;transform:rotate(-5deg);z-index:2}
-.b2{width:42%;left:48%;top:0;transform:rotate(4deg);z-index:3}
-.b3{width:38%;left:2%;top:52%;transform:rotate(3deg);z-index:1}
-.b4{width:38%;left:54%;top:50%;transform:rotate(-3deg);z-index:2}
+.stage{position:relative;height:640px;margin:0}
+.book{position:absolute;height:auto;filter:drop-shadow(0 2px 2px rgba(20,28,51,.22)) drop-shadow(0 22px 26px rgba(20,28,51,.26))}
 @keyframes up{from{translate:0 0}to{translate:0 -26px}}
 @keyframes down{from{translate:0 0}to{translate:0 22px}}
 .d1{animation:up 17s ease-in-out infinite alternate}
@@ -79,8 +75,9 @@ a.row:hover .row-k{color:#0E6B4A}
 /* new in the archive */
 .shelf-sec{background:var(--tint);border-top:0 !important}
 .shelf-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:56px}
-.shelf{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px;align-items:end}
-.item img{width:100%;border-radius:3px;box-shadow:0 2px 3px rgba(20,28,51,.16),0 26px 40px -20px rgba(20,28,51,.4);transition:transform .3s ease}
+.shelf{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:36px;align-items:end}
+.item{display:flex;flex-direction:column;justify-content:flex-end}
+.item img{width:auto;max-width:100%;height:var(--h,300px);object-fit:contain;object-position:left bottom;filter:drop-shadow(0 2px 2px rgba(20,28,51,.2)) drop-shadow(0 22px 26px rgba(20,28,51,.28));transition:transform .3s ease}
 .item:hover img{transform:translateY(-6px)}
 .item h3{margin:22px 0 4px;font-size:17px;font-weight:600;letter-spacing:-0.01em;line-height:1.3}
 .item p{margin:0;font-size:14.5px;line-height:1.5;color:var(--muted)}
@@ -114,18 +111,21 @@ footer nav a{font-size:13px}
 
 @media (max-width:980px){
   .hero .shell{grid-template-columns:minmax(0,1fr);min-height:0;padding-bottom:64px}
-  .stage{height:460px;max-width:520px}
+  .stage{position:relative;height:640px;margin:0}
   .split{grid-template-columns:minmax(0,1fr);gap:36px}
-  .shelf{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:48px}
+  .shelf{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:36px;align-items:end}
+.item{display:flex;flex-direction:column;justify-content:flex-end}
   .sec{padding:80px 0}
 }
 @media (max-width:640px){
+  .item img{height:calc(var(--h,300px)*.62)}
   .shell{width:min(calc(100% - 32px),var(--shell))}
   header nav a:not(.pill){display:none}
-  .stage{height:380px}
+  .stage{position:relative;height:640px;margin:0}
   .row{grid-template-columns:minmax(0,1fr);row-gap:6px}
   .stmt{flex-direction:column;gap:6px;font-size:18px}
-  .shelf{gap:20px}
+  .shelf{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:36px;align-items:end}
+.item{display:flex;flex-direction:column;justify-content:flex-end}
 }
 </style>
 </head>
@@ -156,11 +156,12 @@ footer nav a{font-size:13px}
         <a class="pill pill-o" href="#archive">New in the archive</a>
       </div>
     </div>
-    <figure class="stage" aria-label="Books from the Žiburio Archive">
-      <img class="book b1 d2" src="assets/books/kudirka-1909-cover.jpg" alt="Vinco Kudirkos Raštai, volume I, Tilsit, 1909, cover">
-      <img class="book b2 d1" src="assets/books/kudirka-1909-title.jpg" alt="Vinco Kudirkos Raštai, volume I, Tilsit, 1909, title page">
-      <img class="book b3 d3" src="assets/books/kankles-1895.jpg" alt="Lietuvos Kanklės, Tilsit, 1895, cover">
-      <img class="book b4 d2" src="assets/books/i-sviesa-1908.jpg" alt="Šatrijos Ragana, Į Šviesą, Vilnius, 1908, cover">
+    <figure class="stage" aria-label="Books and papers from the Žiburio Archive">
+      <img class="book d2" src="assets/books/kudirka-1909-cover.webp" alt="Vinco Kudirkos Raštai, volume I, Tilsit, 1909, cover" style="width:33%;left:6%;top:0%;transform:rotate(-6deg);z-index:3">
+      <img class="book d1" src="assets/books/kudirka-1909-title.webp" alt="Vinco Kudirkos Raštai, volume I, title page" style="width:33%;left:46%;top:6%;transform:rotate(4deg);z-index:6">
+      <img class="book d3" src="assets/books/naujasis-testamentas-1816.webp" alt="Title page of an 1816 Lithuanian New Testament" style="width:29%;left:0%;top:40%;transform:rotate(-9deg);z-index:2">
+      <img class="book d2" src="assets/books/kankles-1895.webp" alt="Lietuvos Kanklės, Tilsit, 1895, cover" style="width:25%;left:74%;top:46%;transform:rotate(8deg);z-index:4">
+      <img class="book d3" src="assets/books/i-sviesa-1908.webp" alt="Šatrijos Ragana, Į Šviesą, Vilnius, 1908, cover" style="width:20%;left:54%;top:58%;transform:rotate(-4deg);z-index:7">
     </figure>
   </div>
   <div class="tricolor"></div>
@@ -206,10 +207,10 @@ footer nav a{font-size:13px}
       <a class="pill pill-o" href="https://archyvas.ziburioltmokykla.org" target="_blank" rel="noopener">Browse the archive ↗</a>
     </div>
     <div class="shelf">
-      <a class="item" href="https://archyvas.ziburioltmokykla.org" target="_blank" rel="noopener"><img src="assets/books/kudirka-1909-cover.jpg" alt="Vinco Kudirkos Raštai, volume I, cover"><h3>Vinco Kudirkos Raštai, I</h3><p>Tilžė (Tilsit), 1909. The first collected edition of Vincas Kudirka.</p></a>
-      <a class="item" href="https://archyvas.ziburioltmokykla.org" target="_blank" rel="noopener"><img src="assets/books/kudirka-1909-title.jpg" alt="Vinco Kudirkos Raštai, volume I, title page"><h3>Vinco Kudirkos Raštai, I</h3><p>The title page: compiled by Juozas Gabrys, illustrations by E. Loevy.</p></a>
-      <a class="item" href="https://archyvas.ziburioltmokykla.org" target="_blank" rel="noopener"><img src="assets/books/kankles-1895.jpg" alt="Lietuvos Kanklės, cover"><h3>Lietuvos Kanklės</h3><p>Tilžė (Tilsit), 1895. Printed in Prussia during the forty-year ban on Lithuanian in the Latin alphabet.</p></a>
-      <a class="item" href="https://archyvas.ziburioltmokykla.org" target="_blank" rel="noopener"><img src="assets/books/i-sviesa-1908.jpg" alt="Į Šviesą, cover"><h3>Į Šviesą. I. Per ašaras</h3><p>Šatrijos Ragana. Vilnius, 1908, in the first years after the ban was lifted.</p></a>
+      <a class="item" href="https://archyvas.ziburioltmokykla.org" target="_blank" rel="noopener"><img src="assets/books/kudirka-1909-cover.webp" alt="Vinco Kudirkos Raštai, volume I, cover" style="--h:330px"><h3>Vinco Kudirkos Raštai, I</h3><p>Tilžė (Tilsit), 1909. The first collected edition of Vincas Kudirka.</p></a>
+      <a class="item" href="https://archyvas.ziburioltmokykla.org" target="_blank" rel="noopener"><img src="assets/books/kudirka-1909-title.webp" alt="Vinco Kudirkos Raštai, volume I, title page" style="--h:300px"><h3>Vinco Kudirkos Raštai, I</h3><p>The title page: compiled by Juozas Gabrys, illustrations by E. Loevy.</p></a>
+      <a class="item" href="https://archyvas.ziburioltmokykla.org" target="_blank" rel="noopener"><img src="assets/books/kankles-1895.webp" alt="Lietuvos Kanklės, cover" style="--h:285px"><h3>Lietuvos Kanklės</h3><p>Tilžė (Tilsit), 1895. Printed in Prussia during the forty-year ban on Lithuanian in the Latin alphabet.</p></a>
+      <a class="item" href="https://archyvas.ziburioltmokykla.org" target="_blank" rel="noopener"><img src="assets/books/i-sviesa-1908.webp" alt="Į Šviesą, cover" style="--h:250px"><h3>Į Šviesą. I. Per ašaras</h3><p>Šatrijos Ragana. Vilnius, 1908, in the first years after the ban was lifted.</p></a>
     </div>
   </div>
 </section>
