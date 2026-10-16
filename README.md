@@ -10,21 +10,23 @@ Hosting: Vercel, team `lietuvaais-projects` (the Foundation's team, where lietuv
 
 ## Where every sentence comes from
 
-The page is assembled, never composed. Body copy is verbatim from canon in `vilija-os` unless listed under "Edits" below.
+Mission-first, at Vilija's direction (2026-10-16): "use the about from the foundation formation documents… we need to start our mission clearly… be more meta."
 
 | Block | Source |
 |---|---|
-| One-liner | Duality Doctrine, `corpus/projects/culturenet-foundation.md` |
-| Hero lede, the four steps, the three resources, the apprenticeship paragraph, "The thinking behind it", "Next: a method other communities can follow" | the LinkedIn About she approved on the Imminent brief's register, `voice/public-presence/foundation-first-launch-set-2026-10-15.md` block 4 (and the short bio's "young people from the community do much of the work") |
-| The two questions, the principle "The human being remains responsible for memory…" | `corpus/publications/2026-09-musu-eile-statyti.md`, appendix |
-| Figures | `voice/public-presence/numbers-ruling-2026-09-24.md` only: 326/513, 155 institutions, seven interns. The grant's "4,000-item" and "1816" are not in the ruling and are left off |
-| "operated independently by Žiburio Foundation" | `voice/public-presence/bio-set-2026-10-10.md`, without the clause that follows it |
-| Three stamped internship lines; "Representation is not inheritance."; "A corpus is not a culture."; the sovereignty clause | `voice/public-presence/doctrine-lines.md` |
-| "Žiburio Foundation cannot become an AI company." | Duality Doctrine, the first sentence of its pair ([main] decision, 2026-10-15) |
-| Entity facts | culturenet-brain `docs/legal/entity-status.md`: Michigan nonprofit, formed 2026-08-18 |
-| Look | the Foundation's own (see Design below); the mark's navy `#3D4F6B` and the tricolor |
+| Hero headline (the mission) | Articles of Incorporation as filed, Article II(a), verbatim (culturenet-brain `docs/legal/formation/articles-of-incorporation-AS-FILED-verbatim.md`) |
+| "Žiburys means a light."; "A new institution for new times."; "Žiburys means what it says: a light. The Foundation's job is to keep that light burning…" | founding director letter, culturenet-brain `docs/legal/formation/director-invitation-letter-v3.md` |
+| "permanent steward of Lithuanian diaspora cultural memory"; formed 2026 | Article II(b); entity-status (formed 2026-08-18) |
+| "Each generation of the Lithuanian diaspora built the institutions its moment required…" | English rendering of her Draugas #4 structure, vilija-os `corpus/publications/2026-09-musu-eile-statyti.md` (points 1–2) |
+| "It preserves, gathers, teaches and forms. It measures its success by…" | bylaws v6.6 §1.2 |
+| "Its existence and purposes do not depend on any particular school, parish or host institution…" | Article II, closing sentence, in plain English |
+| Purposes rows | Article II(b)–(f), verbatim; the row labels are fresh |
+| "We prepare our memory and our young people…" | Duality Doctrine one-liner |
+| New in the archive | catalog records for items catalogued 2026-10-14 (Supabase `items_public`): titles, places, years, edition |
+| "Every source is digitized, read by AI, checked by people, and linked to the page it came from." | medium bio, vilija-os `voice/public-presence/foundation-first-launch-set-2026-10-15.md` |
+| Resources, apprenticeship, statements | LinkedIn About (vilija-os PR #231), numbers ruling, doctrine-lines, [main] decisions 2026-10-15 |
 
-Written fresh, and only these: navigation and section labels, the Now/Next chips, link text, the hero tile captions ("Žiburys (the light)", "Metro Detroit"), the Support placeholder line, the contact line, the footer.
+Article II's opening clause names a tax code section; it is not quoted. Nothing on the page says "501(c)(3)" or promises deductibility.
 
 ## Edits to canon text (stealth hold)
 
@@ -34,9 +36,9 @@ CultureNet and Labs are not named on this site while the hold stands. The Septem
 
 Three passes were rejected: a Geist/white layout ("a blob of text", then "I don't like this at all"), the lietuva.ai theme ("the whole theme is totally off", "I don't want the same design for the Foundation"), and a cream/serif/mono layout ("looks like a generic Claude AI site"). Her direction: the original Žiburio logo; tech and culture at the same time.
 
-This pass follows her verdicts from the ten CultureNet design rounds of 2026-09-28 (Claude Design canvas, design memory `labs-site-design-direction`). Accepted there and used here: a plain sans, pill buttons, real page scans drifting behind the hero, short statements on hairline rows. Rejected there and kept out here: mono eyebrows, numbered side markers, card grids, long prose, giant type, off-white ivory, the lietuva.ai look. The Foundation's own: white ground, Schibsted Grotesk, the original mark and its navy, one navy band, a tricolor rule. Not the CultureNet look: no dark ground, no Instrument Sans.
+This pass follows her verdicts from the ten CultureNet design rounds of 2026-09-28 (Claude Design canvas, design memory `labs-site-design-direction`). Accepted there and used here: a plain sans, pill buttons, real book photographs drifting behind the hero, short statements on hairline rows. Rejected there and kept out here: mono eyebrows, numbered side markers, card grids, long prose, giant type, off-white ivory, the lietuva.ai look. The Foundation's own: white ground, Schibsted Grotesk, the original mark and its navy, one navy band, a tricolor rule. Not the CultureNet look: no dark ground, no Instrument Sans.
 
-**Image rights, before go-live:** the four scans in `assets/scans/` are archive photographs already public on lietuva.ai (1816 New Testament title page, a provenance inscription, a 1925–26 student notebook, a 1948 DP camp publication). Each needs its rights recorded under her permission-first rule before this page is public.
+**Images.** `assets/books/` holds the Foundation's own photographs of three pre-1931 imprints (Kudirka, Tilsit 1909; Lietuvos Kanklės, Tilsit 1895; Šatrijos Ragana, Į Šviesą, Vilnius 1908), public domain in the U.S.; the catalog still marks each "rights review required", so record them before go-live. **Knygnešys 1864–1904, I (Kaunas, 1938)** is not cleared: its cover sits in the gitignored `private/` folder, appears only in the private preview, and never enters this public repository. The lietuva.ai scans used on 2026-10-15 were removed (2026-10-16); the 1925–26 notebook and the 1948 DP publication remain in this repository's history at commit 497a8a2.
 
 ## Now vs. research (Vilija, 2026-10-15; `voice/forbidden-language.md`)
 
