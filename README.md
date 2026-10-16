@@ -19,7 +19,7 @@ The page is assembled, never composed. Body copy is verbatim from canon in `vili
 | The path, Programs rows | `voice/public-presence/surface-set-proposal-2026-09-20.md` §3; figures from `voice/public-presence/numbers-ruling-2026-09-24.md` only (326/513, 155 institutions, seven interns) |
 | "operated independently by Žiburio Foundation" | `voice/public-presence/bio-set-2026-10-10.md`, without the clause that follows it |
 | Three stamped internship lines | `voice/public-presence/doctrine-lines.md`, Foundation room |
-| What stays human | Duality Doctrine (the scale sentence) and two stamped lines, `doctrine-lines.md` |
+| What stays human | Duality Doctrine ("cannot become an AI company", the scale sentence); the sovereignty clause in the `doctrine-lines.md` wording (required element); two stamped lines, `doctrine-lines.md` |
 | Entity facts | culturenet-brain `docs/legal/entity-status.md`: Michigan nonprofit, formed 2026-08-18 |
 | Look | `voice/visual-look.md`, the white look she approved |
 
@@ -32,7 +32,7 @@ CultureNet and Labs are not named on this site while the hold stands. The About 
 - "Žiburio Foundation and CultureNet were created around those two questions." → "Žiburio Foundation was created around those two questions."
 - "One asks what should be remembered…" → "It asks what should be remembered…", attached to "The Foundation protects the human responsibility."
 - Dropped whole: the CultureNet paragraph, "They are deliberately not the same institution.", "CultureNet develops the technological capacity.", "The other asks…", "Together they represent a different vision…:" (its bold claim kept on its own), "The two projects therefore meet at a simple principle:" (its bold principle kept), "CultureNet builds the instruments for discovery.", "Neither is complete without the other."
-- "What stays human": the pair "Žiburio Foundation cannot become an AI company. CultureNet cannot become the owner of the cultural memory." is out, since half of it names CultureNet.
+- "What stays human": of the pair "Žiburio Foundation cannot become an AI company. CultureNet cannot become the owner of the cultural memory.", only the first sentence is on the page ([main] decision, 2026-10-15). The sovereignty clause was added in the doctrine-lines wording the same day.
 - The path ends at Lietuva.AI; the CultureNet ring and the reciprocal link are removed.
 
 ## Rules that bind this site
