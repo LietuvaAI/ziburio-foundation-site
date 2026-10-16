@@ -1,9 +1,5 @@
-# Žiburio Foundation mark
+# Marks and ornaments
 
-Redrawn 2026-10-15 from the Žiburio Lithuanian Heritage School mark (flame over the wedge, five rays, the tricolor), as a clean vector for the Foundation. Navy `#3D4F6B` is the school's. Draft for Vilija's read; the wordmark text in `logo-horizontal.svg` is live type and must be outlined once the mark is approved.
-
-- `mark.svg` — filled square, navy
-- `mark-navy-on-white.svg` — navy on white
-- `mark-mono-black.svg` — one-color
-- `logo-horizontal.svg` — mark + wordmark
-- `../favicon.svg` — the filled mark
+- `ziburio-mark.png` — the original Žiburio logo mark (flame over the wedge, rays, the tricolor, on navy), unchanged, from `ziburio-archive/public/ziburio-icon.png`. Vilija, 2026-10-15: "use the original logo. Žiburio." The lockup is this mark beside "Žiburio Foundation" set in Fraunces.
+- `folk-flower.png` — the red cross-stitch flower used on the Žiburio Archive home page, as the page's one ornament.
+- `../favicon.png` — the mark.

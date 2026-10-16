@@ -22,7 +22,7 @@ The page is assembled, never composed. Body copy is verbatim from canon in `vili
 | Three stamped internship lines; "Representation is not inheritance."; "A corpus is not a culture."; the sovereignty clause | `voice/public-presence/doctrine-lines.md` |
 | "Žiburio Foundation cannot become an AI company." | Duality Doctrine, the first sentence of its pair ([main] decision, 2026-10-15) |
 | Entity facts | culturenet-brain `docs/legal/entity-status.md`: Michigan nonprofit, formed 2026-08-18 |
-| Look | `voice/visual-look.md` tokens, plus the school's navy `#3D4F6B` and the tricolor from the Žiburio mark (see `assets/README.md`) |
+| Look | the Foundation's own (see Design below); the mark's navy `#3D4F6B` and the tricolor |
 
 Written fresh, and only these: navigation and section labels, the Now/Next chips, link text, the hero tile captions ("Žiburys (the light)", "Metro Detroit"), the Support placeholder line, the contact line, the footer.
 
@@ -30,9 +30,11 @@ Written fresh, and only these: navigation and section labels, the Now/Next chips
 
 CultureNet and Labs are not named on this site while the hold stands. The September shared statement is used only for its two questions and its principle; its CultureNet paragraphs are not on the page. The path ends at Lietuva.AI; the CultureNet ring and the reciprocal link are removed. "Žiburio Foundation cannot become an AI company." stands alone, without its paired sentence.
 
-## Design (2026-10-15, her direction: "cool and modern", "a cool technology foundation", not an AI template)
+## Design (2026-10-15, her direction)
 
-White, Geist, mono labels, hairlines; the Foundation mark redrawn from the school's (`assets/`); navy as the brand ink; a tricolor rule; figures as tiles; the four steps as a track; programs as cards; the path as concentric rings; stamped lines in Instrument Serif. No analytics, no scripts, one HTML file.
+Her words, in order: "cool and modern", "not look like AI but a cool technology foundation", then on the first two attempts "I don't like this at all", "the whole theme is totally off", "use the original logo, Žiburio", "I don't want the same design for the Foundation" (as lietuva.ai), "it needs to look tech and culture at the same time."
+
+What stands: the original Žiburio mark unchanged as the logo (`assets/`), cream paper and the mark's navy, Fraunces for display (the culture), IBM Plex Sans and Mono for body and labels (the tech), the archive's folk-flower as the one ornament, a tricolor rule, and the hero's right side as a catalog record of the Foundation itself. Steps as a track, programs as cards, the path as rings, Our thinking on navy. No scripts, no analytics, one HTML file.
 
 ## Now vs. research (Vilija, 2026-10-15; `voice/forbidden-language.md`)
 
