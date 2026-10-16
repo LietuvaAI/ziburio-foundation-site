@@ -31,6 +31,8 @@ section{padding-block:40px}
 section>h2{font-size:26px;padding-bottom:12px;border-bottom:1px solid var(--ink);margin-bottom:24px}
 .body p{max-width:65ch;margin:0 0 1em}
 .body h3{font-size:22px;margin:0 0 20px}
+.body .label,.rows-label{display:block;margin:28px 0 12px}
+.rows-label{margin-top:0}
 .rows{list-style:none;margin:0;padding:0}
 .rows li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:6px 32px;padding:16px 0;border-bottom:1px solid var(--hair);align-items:baseline}
 .rows li:first-child{border-top:1px solid var(--hair)}
@@ -83,6 +85,7 @@ footer a{color:var(--muted)}
     <p>Žiburio Foundation was created around those two questions.</p>
     <p><strong>Žiburio Foundation is rooted in people, memory and inheritance.</strong> It stewards cultural materials and the relationships around them; creates opportunities for young people to encounter original sources; supports the work of preserving, understanding and transmitting Lithuanian cultural memory; and keeps responsibility for that inheritance in human hands.</p>
     <p>The Foundation protects the human responsibility. It asks what should be remembered, who is responsible for it, what rights accompany it, and how it should be handed to another generation.</p>
+    <span class="label">Our thinking</span>
     <p><strong>AI should extend the human encounter with memory, not replace it.</strong></p>
     <p>An archive should not become merely a dataset.</p>
     <p>A young person should not become merely a consumer of machine-generated answers.</p>
@@ -111,14 +114,15 @@ footer a{color:var(--muted)}
 
 <section id="programs">
   <h2>Programs</h2>
+  <span class="label rows-label">Now</span>
   <ul class="rows">
     <li><span class="name"><a href="https://archyvas.ziburioltmokykla.org" target="_blank" rel="noopener">Žiburio Archive</a></span><span class="cap">326 published records from 513 catalogued items</span></li>
     <li><span class="name"><a href="https://lietuva.ai" target="_blank" rel="noopener">Lietuva.AI</a></span><span class="cap">operated independently by Žiburio Foundation</span></li>
     <li><span class="name"><a href="https://saveourlithuanianparishes.org" target="_blank" rel="noopener">Save Our Lithuanian Parishes</a></span><span class="cap">a public registry of 155 Lithuanian institutions in the United States</span></li>
-    <li><span class="name">Skaitmeniniai Knygnešiai (Digital Book Carriers)</span><span class="cap">seven student interns</span></li>
+    <li><span class="name">Skaitmeniniai Knygnešiai (Digital Book Carriers)</span><span class="cap">seven student interns, scanning and cataloguing the archive's books. An apprenticeship in cultural inheritance.</span></li>
   </ul>
   <div class="stamped-wrap">
-    <p class="stamped">An apprenticeship in cultural inheritance.</p>
+    <span class="label">Next</span>
     <p class="stamped">Learn to steward. Learn to notice. Make something from what you found.</p>
     <p class="stamped">Perhaps preservation becomes inheritance when someone new begins asking questions of it.</p>
   </div>
@@ -127,6 +131,7 @@ footer a{color:var(--muted)}
 <section id="human">
   <h2>What stays human</h2>
   <div class="body">
+    <span class="label rows-label">Our thinking</span>
     <p>Žiburio Foundation cannot become an AI company.</p>
     <p>The community holds its own memory, governs access to it, builds its own intelligence from it, and does not lose it.</p>
     <p>We do not scale by exporting Lithuanian culture. We scale by exporting a way for communities to remain responsible for their own culture while gaining the power of AI.</p>

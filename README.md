@@ -35,6 +35,10 @@ CultureNet and Labs are not named on this site while the hold stands. The About 
 - "What stays human": of the pair "Žiburio Foundation cannot become an AI company. CultureNet cannot become the owner of the cultural memory.", only the first sentence is on the page ([main] decision, 2026-10-15). The sovereignty clause was added in the doctrine-lines wording the same day.
 - The path ends at Lietuva.AI; the CultureNet ring and the reciprocal link are removed.
 
+## Now vs. research (Vilija, 2026-10-15; `voice/forbidden-language.md`)
+
+Present-tense fact only for what exists and is used today: the Archive (326 published), Lietuva.AI, SOLP, the interns scanning and cataloguing. Everything else is labeled. On this page: the About statement's doctrine, from "AI should extend…" on, sits under the label "Our thinking"; the Programs rows carry "Now"; the interns' caption states what they do today, with the category line attached; the two stamped lines about stewarding, noticing and making are under "Next"; "What stays human" is labeled "Our thinking". Labels are mono, the only fresh text added.
+
 ## Rules that bind this site
 
 - "Nonprofit", never a tax term; no promise of deductibility.
