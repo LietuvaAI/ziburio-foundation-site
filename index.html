@@ -42,8 +42,10 @@ nav a:hover{color:var(--navy)}
 .hero h1{font-size:clamp(34px,3.9vw,52px);font-weight:600;color:var(--ink);max-width:15em}
 .hero .p{margin-top:26px;font-size:19px;max-width:31em}
 .actions{margin-top:34px;display:flex;gap:10px;flex-wrap:wrap}
-.stage{position:relative;height:640px;margin:0}
-.book{position:absolute;height:auto;filter:drop-shadow(0 2px 2px rgba(20,28,51,.22)) drop-shadow(0 22px 26px rgba(20,28,51,.26))}
+.stage{margin:0;display:flex;flex-direction:column;align-items:center}
+.stage img{width:min(76%,420px);height:auto;transform:rotate(3deg);filter:drop-shadow(0 3px 3px rgba(20,28,51,.22)) drop-shadow(0 34px 40px rgba(20,28,51,.3))}
+.stage figcaption{margin-top:30px;font-size:14px;color:var(--muted);text-align:center}
+.shelf+.shelf-head{margin-top:96px}
 @keyframes up{from{translate:0 0}to{translate:0 -26px}}
 @keyframes down{from{translate:0 0}to{translate:0 22px}}
 .d1{animation:up 17s ease-in-out infinite alternate}
@@ -156,13 +158,7 @@ footer nav a{font-size:13px}
         <a class="pill pill-o" href="#archive">New in the archive</a>
       </div>
     </div>
-    <figure class="stage" aria-label="Books and papers from the Žiburio Archive">
-      <img class="book d2" src="assets/books/kudirka-1909-cover.webp" alt="Vinco Kudirkos Raštai, volume I, Tilsit, 1909, cover" style="width:33%;left:6%;top:0%;transform:rotate(-6deg);z-index:3">
-      <img class="book d1" src="assets/books/kudirka-1909-title.webp" alt="Vinco Kudirkos Raštai, volume I, title page" style="width:33%;left:46%;top:6%;transform:rotate(4deg);z-index:6">
-      <img class="book d3" src="assets/books/naujasis-testamentas-1816.webp" alt="Title page of an 1816 Lithuanian New Testament" style="width:29%;left:0%;top:40%;transform:rotate(-9deg);z-index:2">
-      <img class="book d2" src="assets/books/kankles-1895.webp" alt="Lietuvos Kanklės, Tilsit, 1895, cover" style="width:25%;left:74%;top:46%;transform:rotate(8deg);z-index:4">
-      <img class="book d3" src="assets/books/i-sviesa-1908.webp" alt="Šatrijos Ragana, Į Šviesą, Vilnius, 1908, cover" style="width:20%;left:54%;top:58%;transform:rotate(-4deg);z-index:7">
-    </figure>
+    <figure class="stage"><img class="d2" src="assets/books/kudirka-1909-cover.webp" alt="Vinco Kudirkos Raštai, volume I, Tilsit, 1909, cover"><figcaption>Vinco Kudirkos Raštai, I. Tilžė (Tilsit), 1909.</figcaption></figure>
   </div>
   <div class="tricolor"></div>
 </section>
@@ -185,7 +181,6 @@ footer nav a{font-size:13px}
   <div class="shell split">
     <div>
       <h2 class="h">What it was formed to do.</h2>
-      <p class="sub">From Article II of the Foundation's Articles of Incorporation, filed in Michigan on August 18, 2026.</p>
     </div>
     <div class="rows">
       <div class="row"><p class="row-k">Steward</p><p class="row-v">To serve as the permanent steward of Lithuanian diaspora cultural memory: acquiring, preserving, documenting, digitizing, and providing governed access to archival materials, publications, records, oral histories, and other cultural artifacts of the Lithuanian diaspora and its communities.</p></div>
@@ -202,7 +197,6 @@ footer nav a{font-size:13px}
     <div class="shelf-head">
       <div>
         <h2 class="h">New in the archive.</h2>
-        <p class="sub">Catalogued October 14, 2026, in the Žiburio Archive, metro Detroit.</p>
       </div>
       <a class="pill pill-o" href="https://archyvas.ziburioltmokykla.org" target="_blank" rel="noopener">Browse the archive ↗</a>
     </div>
@@ -211,6 +205,14 @@ footer nav a{font-size:13px}
       <a class="item" href="https://archyvas.ziburioltmokykla.org" target="_blank" rel="noopener"><img src="assets/books/kudirka-1909-title.webp" alt="Vinco Kudirkos Raštai, volume I, title page" style="--h:300px"><h3>Vinco Kudirkos Raštai, I</h3><p>The title page: compiled by Juozas Gabrys, illustrations by E. Loevy.</p></a>
       <a class="item" href="https://archyvas.ziburioltmokykla.org" target="_blank" rel="noopener"><img src="assets/books/kankles-1895.webp" alt="Lietuvos Kanklės, cover" style="--h:285px"><h3>Lietuvos Kanklės</h3><p>Tilžė (Tilsit), 1895. Printed in Prussia during the forty-year ban on Lithuanian in the Latin alphabet.</p></a>
       <a class="item" href="https://archyvas.ziburioltmokykla.org" target="_blank" rel="noopener"><img src="assets/books/i-sviesa-1908.webp" alt="Į Šviesą, cover" style="--h:250px"><h3>Į Šviesą. I. Per ašaras</h3><p>Šatrijos Ragana. Vilnius, 1908, in the first years after the ban was lifted.</p></a>
+    </div>
+    <div class="shelf-head">
+      <div>
+        <h2 class="h">From the collection.</h2>
+      </div>
+    </div>
+    <div class="shelf">
+      <a class="item" href="https://archyvas.ziburioltmokykla.org" target="_blank" rel="noopener"><img src="assets/books/naujasis-testamentas-1816.webp" alt="Title page of an 1816 Lithuanian New Testament" style="--h:300px"><h3>Naujasis Testamentas</h3><p>1816. The title page.</p></a>
     </div>
   </div>
 </section>
