@@ -1,60 +1,69 @@
 # ziburiofoundation.org
 
-The public website of Žiburio Foundation, a Michigan nonprofit. One static page, no build step, no analytics, no third-party forms. Contact is a mailto link only.
+The public website of Žiburio Foundation, a Michigan nonprofit. Five static pages, no build step, no analytics, no third-party forms. Contact is a mailto link only. English and Lithuanian, switched in the page; the choice is kept in that visitor's own browser and sent nowhere.
 
 Hosting: Vercel, team `lietuvaais-projects` (the Foundation's team, where lietuva.ai runs). Domain: `ziburiofoundation.org`, registered at Porkbun; the DNS record is added by Vilija.
 
 ## Status
 
-**Staging.** `index.html` carries `<meta name="robots" content="noindex, nofollow">`; the go-live PR removes that line and nothing else. Nothing is public until Vilija says so.
+**Staging.** Every page carries `<meta name="robots" content="noindex, nofollow">`; the go-live PR removes those lines and nothing else. Nothing is public until Vilija says so.
+
+## Pages
+
+| File | What it holds |
+|---|---|
+| `index.html` | Hero, mission, short About, the three work sections, the next-generation panel |
+| `about.html` | Mission, the full About, Our purpose, "What is worth the cost of carrying forward?", the founding statement |
+| `work.html` | The three sections in full |
+| `skaitmeniniai-knygnesiai.html` | The internship, written broadly — the Foundation's youth work, not the archive's workflow |
+| `principles.html` | The four principles and Source · Inference · Authority |
+
+The pages are generated from the Claude Design canvas "Žiburio Foundation site" (`claude.ai/artifact/Qr7YNA5jQ3sXV5ykYMWgtm`) by `build_site.py`, which lives with the canvas in the session scratchpad, not in this repository. Edits can be made directly in these files; if the canvas is rebuilt, re-export and re-check.
+
+## What the Foundation does — the three sections
+
+At Vilija's direction (2026-10-19): "more like three sections — the internship, the Archive and Learning/Creating from our past… we should be more clean about what the foundation does."
+
+1. **The Internship** — Skaitmeniniai Knygnešiai. Links to the program page here and to the interns' own work at the Žiburio Archive.
+2. **The Archive** — preserving the sources and keeping their origins visible. Lietuva.ai is described inside this section as how dispersed sources are connected with provenance kept, and linked; it is no longer presented as a separate project.
+3. **Learning and creating from our past** — research, documentation and new work made from the record. Save Our Lithuanian Parishes carries it now. The graphic novel was named here on 2026-10-19 and removed the same day at her word; the section is framed so new work can be named when it is ready.
 
 ## Where every sentence comes from
 
-Mission-first, at Vilija's direction (2026-10-16): "use the about from the foundation formation documents… we need to start our mission clearly… be more meta."
+English prose is assembled from the October 2026 Foundation draft (hero, About, Our purpose, the four principles, the next generation, the founding statement, Support), from the white paper Version 7 (Drive, "CultureNet Whitepaper — Version 7") for the three categories that must never collapse, the youth-formation passages and the rights line, and from her own published text for the internship page (The Hearth support page, `writing/press/2026-09_hearth-support-page.md`, and the archive's internship page). The mission sentence is the paraiška's, in English: "To ensure that Lithuanian cultural knowledge, memory, faith, language, institutions, and archives continue to illuminate future generations."
 
-| Block | Source |
-|---|---|
-| Hero headline (the mission) | Articles of Incorporation as filed, Article II(a), verbatim (culturenet-brain `docs/legal/formation/articles-of-incorporation-AS-FILED-verbatim.md`) |
-| "Žiburys means a light."; "A new institution for new times."; "Žiburys means what it says: a light. The Foundation's job is to keep that light burning…" | founding director letter, culturenet-brain `docs/legal/formation/director-invitation-letter-v3.md` |
-| "permanent steward of Lithuanian diaspora cultural memory"; formed 2026 | Article II(b); entity-status (formed 2026-08-18) |
-| "Each generation of the Lithuanian diaspora built the institutions its moment required…" | English rendering of her Draugas #4 structure, vilija-os `corpus/publications/2026-09-musu-eile-statyti.md` (points 1–2) |
-| "It preserves, gathers, teaches and forms. It measures its success by…" | bylaws v6.6 §1.2 |
-| "Its existence and purposes do not depend on any particular school, parish or host institution…" | Article II, closing sentence, in plain English |
-| Purposes rows | Article II(b)–(f), verbatim; the row labels are fresh |
-| "We prepare our memory and our young people…" | Duality Doctrine one-liner |
-| New in the archive | catalog records for items catalogued 2026-10-14 (Supabase `items_public`): titles, places, years, edition |
-| "Every source is digitized, read by AI, checked by people, and linked to the page it came from." | medium bio, vilija-os `voice/public-presence/foundation-first-launch-set-2026-10-15.md` |
-| Resources, apprenticeship, statements | LinkedIn About (vilija-os PR #231), numbers ruling, doctrine-lines, [main] decisions 2026-10-15 |
+Lithuanian is **not a translation of the English.** Per her instruction (2026-10-18), it is written in the **Zaranka register** (`writing/reference/zaranka-register.md`) and assembled Tier 1 first — the Globali Lietuva paraiška, her Draugas pieces and `writing/reference/vilija-voice-library.md`. Tier 1 lines carried here include "Praeitis yra žiburys…", "Be kalbos nėra tautos.", "Tautos atmintis — ne istorija ir ne archyvas…", the "Per X" sweep, the "Be Valančiaus parapijų tinklo — nebūtų knygnešių…" chain, "Knygnešiai nesaugojo — nešė.", "Tikslas – išsaugoti jų reikšmę.", "Tai ne prototipas – tai jau veikia.", and the lietuva.ai published lines. Because the two languages are built from their own canon, a section can carry different sentences in each.
 
-Article II's opening clause names a tax code section; it is not quoted. Nothing on the page says "501(c)(3)" or promises deductibility.
+**Constructed Lithuanian awaiting her sign-off** (no Tier 1 line existed): the hero subline, the four principles' wording, the Source/Inference/Authority triad, parts of the founding statement and the Support block, and the section labels.
+
+Article II's opening clause names a tax code section; it is not quoted. Nothing on the site says "501(c)(3)" or promises deductibility.
 
 ## Edits to canon text (stealth hold)
 
-CultureNet and Labs are not named on this site while the hold stands. The September shared statement is used only for its two questions and its principle; its CultureNet paragraphs are not on the page. The path ends at Lietuva.AI; the CultureNet ring and the reciprocal link are removed. "Žiburio Foundation cannot become an AI company." stands alone, without its paired sentence.
+CultureNet and Labs are not named on this site while the hold stands. The white paper's Lietuva.ai sentence "Using CultureNet technology, it develops new ways…" is carried without its first clause. "Žiburio Foundation cannot become an AI company." stands alone, without its paired sentence.
 
-## Design (2026-10-15, her direction)
+## Design
 
-Three passes were rejected: a Geist/white layout ("a blob of text", then "I don't like this at all"), the lietuva.ai theme ("the whole theme is totally off", "I don't want the same design for the Foundation"), and a cream/serif/mono layout ("looks like a generic Claude AI site"). Her direction: the original Žiburio logo; tech and culture at the same time.
+Her direction across 2026-10-15 → 19: the original Žiburio mark, "tech and cultural at the same time", young and dynamic, Twelve Labs for layout, pops of colour, less padding, no juosta pattern, no big green/red/black blocks, no sideways labels, her own photographs.
 
-This pass follows her verdicts from the ten CultureNet design rounds of 2026-09-28 (Claude Design canvas, design memory `labs-site-design-direction`). Accepted there and used here: a plain sans, pill buttons, real book photographs drifting behind the hero, short statements on hairline rows. Rejected there and kept out here: mono eyebrows, numbered side markers, card grids, long prose, giant type, off-white ivory, the lietuva.ai look. The Foundation's own: white ground, Schibsted Grotesk, the original mark and its navy, one navy band, a tricolor rule. Not the CultureNet look: no dark ground, no Instrument Sans.
+- **Type.** Hanken Grotesk throughout. The wordmark is the school's lockup, set in Oswald: ŽIBURIO over FOUNDATION, both lines flush left and right (ŽIBURIO is tracked to 0.1175em so the two lines measure the same).
+- **Mark.** The original school mark with its navy square removed and the glyph recoloured navy; the tricolour keeps the original's geometry exactly. `assets/mark.png`. A white version for dark grounds is built but not currently used.
+- **Colour.** Navy `#0E1426`, yellow `#FDB913`, green `#006A44` for section labels, red only in the tricolour rule. The 3px geltona–žalia–raudona rule under the hero follows the Save Our Lithuanian Parishes pattern.
+- **Work boxes.** Navy, image left at 4:3, text right, yellow number, a yellow primary link and outlined secondary links.
 
-**Images.** Cutouts with transparent backgrounds, shadows following each object's shape. In this repository (`assets/books/`), public domain in the U.S.: Kudirka, Raštai I (Tilsit 1909, cover and title page), Lietuvos Kanklės (Tilsit 1895), Šatrijos Ragana, Į Šviesą (Vilnius 1908), and the 1816 Naujasis Testamentas title page (from lietuva.ai). The catalog still marks the 2026-10-14 books "rights review required"; record them before go-live. **Not in this repository**, by her permission-first rule, kept in the gitignored `private/` folder and shown only in her private preview (`_preview.html`, also gitignored): Knygnešys 1864–1904, I (Kaunas 1938), and three lietuva.ai cutouts (a handwritten provenance inscription, a 1925–26 student notebook, a 1948 DP camp publication). Vilija asked for all of them on the page (2026-10-16); each needs its rights recorded before it can be committed here and shown publicly. The notebook and DP images remain in this repository's history at commit 497a8a2.
-
-## Now vs. research (Vilija, 2026-10-15; `voice/forbidden-language.md`)
-
-Present-tense fact only for what exists and is used today: the Archive (326 published), Lietuva.AI, SOLP, the interns scanning and cataloguing. Everything else is labeled. On this page: the About statement's doctrine, from "AI should extend…" on, sits under the label "Our thinking"; the Programs rows carry "Now"; the interns' caption states what they do today, with the category line attached; the two stamped lines about stewarding, noticing and making are under "Next"; "What stays human" is labeled "Our thinking". Labels are mono, the only fresh text added.
+**Images.** All are Vilija's own photographs or screenshots of her own sites; consent for the student photographs and names is on record with her (`memory/student-images-consent.md`). Shipped in `assets/`: `interns-table.webp` (hero, ceiling cropped), `sigita-lightbox.webp`, `interns-gloves.webp`, `interns-phones.webp`, `interns-cataloging.webp`, `archive-catalog.webp`, `solp-site.webp`. Retained but no longer used by any page: `assets/books/` (public-domain pre-1931 imprints) and `ziburio-mark.png`. **Not in this repository**, by her permission-first rule, kept in the gitignored `private/` folder: Knygnešys 1864–1904, I (Kaunas 1938) and three lietuva.ai cutouts; each needs its rights recorded before it can be committed here. The notebook and DP images remain in this repository's history at commit 497a8a2.
 
 ## Rules that bind this site
 
 - "Nonprofit", never a tax term; no promise of deductibility.
 - Entity facts only from culturenet-brain `docs/legal/entity-status.md`. The registered office is Farmington, Michigan, so the entity lines say "Michigan" and nothing narrower; "Detroit" appears only for the parish and the community.
-- Student interns are credited as a group, never named; no student images.
-- Surname "Jurgutis" on this English surface.
-- No analytics that send data anywhere; no third-party forms.
+- Student photographs are used with her consent on record; students are credited as a group and only Sigita Jurgutis is named, in an image description, as on the archive's own internship page.
+- Surname "Jurgutis" on English surfaces.
+- No analytics that send data anywhere; no third-party forms. `localStorage` holds only the visitor's language choice.
 - Branch and PR flow; never push `main` directly. Git identity `LietuvaAI` / `vilija@lietuva.ai`.
 
 ## Going live
 
-1. Vilija confirms the copy (see the open lines in the launch PR).
-2. PR removing the `robots` meta line.
+1. Vilija confirms the copy, including the constructed Lithuanian listed above.
+2. PR removing the `robots` meta lines.
 3. Vilija adds the DNS record at Porkbun; the project's domain is attached in Vercel.
