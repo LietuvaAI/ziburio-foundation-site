@@ -6,7 +6,7 @@ Hosting: Vercel, team `lietuvaais-projects` (the Foundation's team, where lietuv
 
 ## Status
 
-**Staging.** Every page carries `<meta name="robots" content="noindex, nofollow">`; the go-live PR removes those lines and nothing else. Nothing is public until Vilija says so.
+**Live.** The `robots` meta lines were removed at go-live (2026-10-20).
 
 ## Pages
 
