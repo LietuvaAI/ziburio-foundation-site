@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="favicon.png">
+<title>Žiburio Foundation — home</title>
+
+</head>
+<body>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Oswald:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:inherit;text-decoration:none}
+.zf{font-family:"Hanken Grotesk",system-ui,sans-serif;color:#0E1426;background:#FFFFFF;-webkit-font-smoothing:antialiased}
+.zf img{display:block;max-width:100%}
+.disp{font-family:"Hanken Grotesk",system-ui,sans-serif;letter-spacing:-0.035em}
+.wordmark{display:inline-flex;flex-direction:column;align-items:flex-start;line-height:1;color:#0E1426;--wm1:21px;--wm2:calc(var(--wm1)*0.5476)}
+.wm1{font-family:"Oswald",system-ui,sans-serif;font-size:var(--wm1);font-weight:600;letter-spacing:.1175em;margin-right:-.1175em;text-transform:uppercase}
+.wm2{font-family:"Oswald",system-ui,sans-serif;font-size:var(--wm2);font-weight:400;letter-spacing:.285em;margin-right:-.285em;text-transform:uppercase;margin-top:.3em}
+.mono{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.wrap{width:100%;max-width:1400px;margin:0 auto;padding:0 36px;box-sizing:border-box}
+.pill{display:inline-flex;align-items:center;height:46px;padding:0 22px;border-radius:999px;font-size:15px;font-weight:600}
+.two{display:grid;grid-template-columns:4fr 8fr;gap:36px;align-items:start}
+.two > *{min-width:0}
+.wrow img{transition:transform .5s ease}
+.wrow:hover img{transform:scale(1.03)}
+@keyframes drift{from{transform:scale(1) translate(0,0)}to{transform:scale(1.04) translate(-.8%,.5%)}}
+.drift{animation:drift 32s ease-in-out infinite alternate}
+@media (prefers-reduced-motion:reduce){.drift{animation:none}}
+@media (max-width:900px){.two,.foot,.pr,.wrow,.three{grid-template-columns:1fr !important;gap:20px !important} .four{grid-template-columns:1fr 1fr !important} .cols{column-count:1 !important} .wrow > div:first-child{order:0} .navlinks{display:none !important} .wrap{padding:0 20px}}
+
+x-en,x-lt{display:contents}
+html[lang="lt"] x-en{display:none}
+html[lang="en"] x-lt{display:none}
+.langbtn{height:34px;padding:0 12px;border:0;cursor:pointer;font:inherit;font-size:12px;font-weight:700;background:transparent;color:#0E1426}
+html[lang="en"] .langbtn[data-l="en"],html[lang="lt"] .langbtn[data-l="lt"]{background:#0E1426;color:#FFFFFF}
+</style>
+
+<div class="zf" style="width: 100%">
+<header class="wrap" style="display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 62px">
+<a href="index.html" style="display: flex; align-items: center; gap: 11px" aria-label="Žiburio Foundation home">
+<img src="assets/mark.png" alt="" style="height: 40px; width: auto">
+<span class="wordmark"><span class="wm1">Žiburio</span><span class="wm2">Foundation</span></span>
+</a>
+<nav aria-label="Primary" style="display: flex; align-items: center; gap: 26px; font-size: 15px; font-weight: 600">
+<span class="navlinks" style="display: flex; gap: 26px; color: #5F6778"><x-en><a href="about.html">About</a><a href="work.html">Our work</a><a href="skaitmeniniai-knygnesiai.html">Skaitmeniniai Knygnešiai</a><a href="principles.html">Principles</a><a href="#support">Support</a></x-en><x-lt><a href="about.html">Apie</a><a href="work.html">Mūsų darbai</a><a href="skaitmeniniai-knygnesiai.html">Skaitmeniniai knygnešiai</a><a href="principles.html">Principai</a><a href="#support">Parama</a></x-lt></span>
+<a href="#support" class="pill" style="height: 38px; padding: 0 18px; background: #FDB913; font-weight: 700"><x-en>Donate</x-en><x-lt>Paremti</x-lt></a>
+<span style="display: inline-flex; border: 1.5px solid #0E1426; border-radius: 999px; overflow: hidden"><button type="button" class="langbtn" data-l="en" onclick="setLang('en')" aria-pressed="true">EN</button><button type="button" class="langbtn" data-l="lt" onclick="setLang('lt')" aria-pressed="false">LT</button></span>
+</nav>
+</header>
+<section id="top" style="position: relative; overflow: hidden; height: clamp(500px, 50vw, 720px); background: #0E1426; color: #FFFFFF">
+<img class="drift" src="assets/interns-table.webp" alt="Young people cataloguing Lithuanian books with their phones at a table" style="position: absolute; inset: -3%; width: 106%; height: 106%; object-fit: cover; object-position: center 60%">
+<div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14,20,38,.82) 0%, rgba(14,20,38,.5) 30%, rgba(14,20,38,0) 55%, rgba(14,20,38,0) 78%, rgba(14,20,38,.45) 100%)"></div>
+<div class="wrap" style="position: absolute; left: 0; right: 0; top: clamp(28px, 3.5vw, 52px)">
+<x-en><h1 class="disp" style="margin: 0; font-size: clamp(40px, 6vw, 88px); line-height: 1; font-weight: 500; letter-spacing: -0.045em">Memory. Inheritance. Continuity.</h1><p style="margin: 16px 0 0; max-width: 40em; font-size: clamp(16px, 1.35vw, 20px); line-height: 1.45; color: rgba(255,255,255,.92)">Preserving the sources of Lithuanian cultural memory, strengthening the institutions that transmit it, and preparing a new generation to carry that inheritance into the age of artificial intelligence.</p></x-en><x-lt><h1 class="disp" style="margin: 0; font-size: clamp(30px, 4.2vw, 62px); line-height: 1.02; font-weight: 500; letter-spacing: -0.035em; max-width: 14em">Praeitis yra žiburys, kurio šviesoje galime aiškiau matyti, kur stovime šiandien.</h1><p style="margin: 16px 0 0; max-width: 40em; font-size: clamp(16px, 1.35vw, 20px); line-height: 1.45; color: rgba(255,255,255,.92)">Saugome lietuvių kultūros šaltinius, stipriname įstaigas, kurios juos perduoda, ir ruošiame kartą, kuri šį palikimą neš toliau.</p></x-lt>
+</div>
+<div class="wrap" style="position: absolute; left: 0; right: 0; bottom: clamp(22px, 2.6vw, 36px); display: flex; gap: 10px">
+<a href="work.html" class="pill" style="background: #FDB913; color: #0E1426; font-weight: 700"><x-en>Our Work</x-en><x-lt>Mūsų darbai</x-lt></a>
+<a href="about.html" class="pill" style="border: 1.5px solid rgba(255,255,255,.7); color: #FFFFFF; backdrop-filter: blur(6px)"><x-en>About the Foundation</x-en><x-lt>Apie fondą</x-lt></a>
+</div>
+</section>
+<div style="display: flex; height: 3px"><div style="flex: 1; background: #FDB913"></div><div style="flex: 1; background: #006A44"></div><div style="flex: 1; background: #C1272D"></div></div><section style="background: #FFFFFF; color: #0E1426; border-bottom: 1px solid #E3E6EC">
+<div class="wrap two" style="padding-top: clamp(18px, 2vw, 26px); padding-bottom: clamp(18px, 2vw, 26px); align-items: center; gap: 28px">
+<div><div style="width: 56px; height: 5px; background: #FDB913; border-radius: 3px; margin-bottom: 12px"></div><p class="mono" style="margin: 0 0 8px; color: #006A44"><x-en>Our mission</x-en><x-lt>Misija</x-lt></p><p class="disp" style="margin: 0; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.12; font-weight: 600"><x-en>Culture is how human intelligence endures.</x-en><x-lt>Be kalbos nėra tautos.</x-lt></p></div>
+<p class="disp" style="margin: 0; font-size: clamp(19px, 1.9vw, 26px); line-height: 1.3; font-weight: 500"><x-en>To ensure that Lithuanian cultural knowledge, memory, faith, language, institutions, and archives continue to illuminate future generations.</x-en><x-lt>Užtikrinti, kad lietuvių žinios, atmintis, tikėjimas, kalba, institucijos ir archyvai ir toliau šviestų ateities kartoms.</x-lt></p>
+</div>
+</section><section id="about" class="wrap" style="padding-top: clamp(24px, 2.6vw, 36px); padding-bottom: clamp(16px, 2vw, 28px)">
+<div class="two">
+<div><p class="mono" style="margin: 0 0 0; color: #006A44"><x-en>About</x-en><x-lt>Apie</x-lt></p><p class="disp" style="margin: 8px 0 0; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.15; font-weight: 600; font-size: clamp(26px, 2.8vw, 38px); line-height: 1.08"><x-en>Memory is not simply a record of the past. It is how a nation, how a civilization, carries itself into the future.</x-en><x-lt>Žiburio Foundation saugo, skaitmenina ir aprašo Lietuvos diasporos archyvus, leidinius, sakytinę istoriją ir kitas kultūros vertybes.</x-lt></p></div>
+<div>
+<x-en><p style="margin: 0 0 9px; font-size: 16px; line-height: 1.55; color: #3A4458">Žiburio Foundation exists to ensure that this inheritance remains accessible, intelligible, and alive for future generations.</p><p style="margin: 0 0 9px; font-size: 16px; line-height: 1.55; color: #3A4458">We preserve original sources, connect dispersed collections, support historical research, and develop new ways to study and transmit cultural memory. Our work brings together archival preservation, education, historical scholarship, and emerging technologies.</p><p style="margin: 0 0 0; font-size: 16px; line-height: 1.55; color: #3A4458">But the purpose is not simply to preserve more information. It is to preserve the human capacity to understand, interpret, and carry forward what has been inherited.</p></x-en>
+<x-lt><p style="margin: 0 0 9px; font-size: 16px; line-height: 1.55; color: #3A4458">Žiburio Foundation saugo, skaitmenina ir aprašo Lietuvos diasporos archyvus, leidinius, sakytinę istoriją ir kitas kultūros vertybes.</p><p style="margin: 0 0 9px; font-size: 16px; line-height: 1.55; color: #3A4458">Mokome jaunimą archyvų darbo, istorinių tyrimų, lietuvių kalbos ir atsakingo naujųjų technologijų naudojimo.</p><p style="margin: 0 0 0; font-size: 16px; line-height: 1.55; color: #3A4458">Tikslas nėra tik išsaugoti knygas. Tikslas – išsaugoti jų reikšmę.</p></x-lt>
+<a href="about.html" class="pill" style="margin-top: 16px; height: 40px; padding: 0 18px; border: 1.5px solid #0E1426; font-size: 14px; font-weight: 700"><x-en>About the Foundation</x-en><x-lt>Apie fondą</x-lt> →</a>
+</div>
+</div>
+</section><section id="work" class="wrap" style="padding-top: clamp(10px, 1.2vw, 16px); padding-bottom: clamp(12px, 1.6vw, 22px)">
+<div style="border-top: 1px solid #E3E6EC; padding-top: clamp(14px, 1.6vw, 22px)">
+<p class="mono" style="margin: 0 0 0; color: #006A44"><x-en>Our work</x-en><x-lt>Mūsų darbai</x-lt></p>
+<p class="disp" style="margin: 8px 0 0; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.15; font-weight: 600; max-width: 26em"><x-en>What the Foundation does: preserve the record, form the people who inherit it, and make new work from it.</x-en><x-lt>Ką fondas daro: saugo šaltinį, ugdo tuos, kurie jį paveldi, ir kuria iš jo naujus darbus.</x-lt></p>
+<x-en><p style="margin: 12px 0 0; max-width: 64ch; font-size: 16px; line-height: 1.65; color: #3A4458">Our programs are connected by a common purpose: to make Lithuanian cultural memory available for study, meaningful to new generations, and capable of informing the future.</p></x-en><x-lt><p style="margin: 12px 0 0; max-width: 64ch; font-size: 16px; line-height: 1.65; color: #3A4458">Visus darbus jungia vienas tikslas: kad lietuviška atmintis būtų prieinama tyrėjui, suprantama jaunam žmogui ir naudinga ateičiai.</p></x-lt>
+<div style="display: flex; flex-direction: column; gap: 10px; margin-top: 14px">
+<div class="wrow" style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; background: #0E1426; color: #FFFFFF; border-radius: 16px; padding: clamp(14px, 1.5vw, 20px)"><div style="border-radius: 12px; overflow: hidden; aspect-ratio: 4 / 3; background: #151A2B; width: 100%; min-width: 0"><img src="assets/sigita-lightbox.webp" alt="The Internship" style="width: 100%; height: 100%; object-fit: cover; object-position: center 40%"></div><div style="min-width: 0">
+<p class="mono" style="margin: 0 0 10px; color: #FDB913">01</p>
+<h3 class="disp" style="margin: 0; font-size: clamp(24px, 2.2vw, 32px); line-height: 1.1; font-weight: 600"><x-en>The Internship</x-en><x-lt>Stažuotė</x-lt></h3>
+<p style="margin: 6px 0 10px; font-size: 17px; font-weight: 600; color: rgba(255,255,255,.92)"><x-en>Skaitmeniniai Knygnešiai — young people who take responsibility for what they inherit</x-en><x-lt>Skaitmeniniai knygnešiai — jaunimas, kuris ima atsakomybę už tai, ką paveldi</x-lt></p>
+<x-en><p style="margin: 0 0 9px; font-size: 15.5px; line-height: 1.55; color: rgba(255,255,255,.78)">In the nineteenth century, Lithuanian knygnešiai carried prohibited books across borders to preserve the Lithuanian language and its written culture. Today, a new generation faces a different responsibility.</p><p style="margin: 0 0 14px; font-size: 15.5px; line-height: 1.55; color: rgba(255,255,255,.78)">Through our Skaitmeniniai Knygnešiai program, young people work directly with historical books, periodicals, documents, and audiovisual records. They learn to digitize, investigate, contextualize, and publish primary sources while developing Lithuanian language skills, historical understanding, and technical competence.</p></x-en>
+<x-lt><p style="margin: 0 0 14px; font-size: 15.5px; line-height: 1.55; color: rgba(255,255,255,.78)">Skaitmeniniai knygnešiai – Žiburio lituanistinės mokyklos inicijuota programa, tęsianti istorinę knygnešių misiją naujoje terpėje.</p></x-lt>
+<div style="display: flex; flex-wrap: wrap; gap: 8px"><a href="skaitmeniniai-knygnesiai.html" class="pill" style="height: 40px; padding: 0 18px; background: #FDB913; color: #0E1426; font-size: 14px; font-weight: 700"><x-en>About the program</x-en><x-lt>Apie programą</x-lt> →</a><a href="https://archyvas.ziburioltmokykla.org/internship" class="pill" style="height: 40px; padding: 0 16px; border: 1.5px solid rgba(255,255,255,.45); color: #FFFFFF; font-size: 14px; font-weight: 600"><x-en>See their work</x-en><x-lt>Jų darbas</x-lt> →</a></div>
+</div></div>
+<div class="wrow" style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; background: #0E1426; color: #FFFFFF; border-radius: 16px; padding: clamp(14px, 1.5vw, 20px)"><div style="border-radius: 12px; overflow: hidden; aspect-ratio: 4 / 3; background: #151A2B; width: 100%; min-width: 0"><img src="assets/archive-catalog.webp" alt="The Archive" style="width: 100%; height: 100%; object-fit: cover; object-position: top left"></div><div style="min-width: 0">
+<p class="mono" style="margin: 0 0 10px; color: #FDB913">02</p>
+<h3 class="disp" style="margin: 0; font-size: clamp(24px, 2.2vw, 32px); line-height: 1.1; font-weight: 600"><x-en>The Archive</x-en><x-lt>Archyvas</x-lt></h3>
+<p style="margin: 6px 0 10px; font-size: 17px; font-weight: 600; color: rgba(255,255,255,.92)"><x-en>Preserving the sources, and keeping their origins visible</x-en><x-lt>Saugome šaltinius ir laikome matomą jų kilmę</x-lt></p>
+<x-en><p style="margin: 0 0 9px; font-size: 15.5px; line-height: 1.55; color: rgba(255,255,255,.78)">The Žiburio Archive brings together Lithuanian books, periodicals, documents, and other historical materials preserved by the Detroit Lithuanian community. These collections record the intellectual, religious, educational, and civic life of generations who maintained Lithuanian culture beyond the borders of Lithuania.</p><p style="margin: 0 0 14px; font-size: 15.5px; line-height: 1.55; color: rgba(255,255,255,.78)">The Foundation works to preserve original materials, document their provenance, and make them accessible for scholarship, education, and public use.</p></x-en>
+<x-lt><p style="margin: 0 0 14px; font-size: 15.5px; line-height: 1.55; color: rgba(255,255,255,.78)">Kiekviena knyga archyve yra atminties vienetas, kuris egzistuoja, turi struktūrą ir atskleidžia tiesą apie žmones, kurie ją sukūrė ir perdavė.</p></x-lt>
+<div style="display: flex; flex-wrap: wrap; gap: 8px"><a href="https://archyvas.ziburioltmokykla.org" class="pill" style="height: 40px; padding: 0 18px; background: #FDB913; color: #0E1426; font-size: 14px; font-weight: 700"><x-en>Explore the archive</x-en><x-lt>Archyvas</x-lt> →</a><a href="https://lietuva.ai" class="pill" style="height: 40px; padding: 0 16px; border: 1.5px solid rgba(255,255,255,.45); color: #FFFFFF; font-size: 14px; font-weight: 600"><x-en>Lietuva.ai</x-en><x-lt>Lietuva.ai</x-lt> →</a></div>
+</div></div>
+<div class="wrow" style="display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; background: #0E1426; color: #FFFFFF; border-radius: 16px; padding: clamp(14px, 1.5vw, 20px)"><div style="border-radius: 12px; overflow: hidden; aspect-ratio: 4 / 3; background: #151A2B; width: 100%; min-width: 0"><img src="assets/solp-site.webp" alt="Learning and creating from our past" style="width: 100%; height: 100%; object-fit: cover; object-position: top left"></div><div style="min-width: 0">
+<p class="mono" style="margin: 0 0 10px; color: #FDB913">03</p>
+<h3 class="disp" style="margin: 0; font-size: clamp(24px, 2.2vw, 32px); line-height: 1.1; font-weight: 600"><x-en>Learning and creating from our past</x-en><x-lt>Mokomės ir kuriame iš savo praeities</x-lt></h3>
+<p style="margin: 6px 0 10px; font-size: 17px; font-weight: 600; color: rgba(255,255,255,.92)"><x-en>Research, documentation, and new work made from the record</x-en><x-lt>Tyrimai, dokumentavimas ir nauji darbai iš istorinio įrašo</x-lt></p>
+<x-en><p style="margin: 0 0 9px; font-size: 15.5px; line-height: 1.55; color: rgba(255,255,255,.78)">Preserving a source is the beginning. The Foundation also studies what these records contain and makes new work from them — research, writing, and publications that return the record to the community in a form people can use.</p><p style="margin: 0 0 14px; font-size: 15.5px; line-height: 1.55; color: rgba(255,255,255,.78)">Save Our Lithuanian Parishes documents the institutions that sustained Lithuanian life in the United States. For generations these parishes were more than places of worship: they were centers of education, language, cultural organization, mutual assistance, and community life, and their schools, societies, libraries, and archives helped sustain Lithuanian identity across generations.</p></x-en>
+<x-lt><p style="margin: 0 0 14px; font-size: 15.5px; line-height: 1.55; color: rgba(255,255,255,.78)">JAV lietuvių parapijų registras, kuriame aprašytos 155 parapijos ir kitos įstaigos.</p></x-lt>
+<div style="display: flex; flex-wrap: wrap; gap: 8px"><a href="https://saveourlithuanianparishes.org" class="pill" style="height: 40px; padding: 0 18px; background: #FDB913; color: #0E1426; font-size: 14px; font-weight: 700"><x-en>Save Our Lithuanian Parishes</x-en><x-lt>Parapijos</x-lt> →</a></div>
+</div></div>
+</div>
+<div style="margin-top: 14px"><a href="work.html" class="pill" style="height: 40px; padding: 0 18px; border: 1.5px solid #0E1426; font-size: 14px; font-weight: 700"><x-en>All of our work</x-en><x-lt>Visi darbai</x-lt> →</a></div>
+</div>
+</section><section class="wrap" style="padding-top: 0; padding-bottom: clamp(12px, 1.6vw, 22px)">
+<div style="border-radius: 16px; background: #0E1426; color: #FFFFFF; padding: clamp(16px, 1.8vw, 24px) clamp(16px, 2vw, 24px)">
+<div class="two" style="grid-template-columns: 7fr 5fr; align-items: center">
+<div>
+<p class="mono" style="margin: 0 0 10px; color: #FDB913"><x-en>The next generation</x-en><x-lt>Kita karta</x-lt></p>
+<p class="disp" style="margin: 0; max-width: 20em; font-size: clamp(22px, 2.4vw, 34px); line-height: 1.12; font-weight: 600"><x-en>What we preserve matters. Who inherits it matters just as much.</x-en><x-lt>Jaunimą mokome ne tik naudotis naujais įrankiais, bet ir atsakingai spręsti, ką išsaugome ir perduodame kitai kartai.</x-lt></p>
+<x-en><p style="margin: 12px 0 0; max-width: 40em; font-size: 15.5px; line-height: 1.55; color: rgba(255,255,255,.8)">Žiburio Foundation brings young people into the work itself—not merely as students learning about the past, but as participants in preserving, investigating, and extending a living cultural inheritance.</p></x-en><x-lt><p style="margin: 12px 0 0; max-width: 40em; font-size: 15.5px; line-height: 1.55; color: rgba(255,255,255,.8)">Kai gimnazistas katalogizuoja DP stovyklos knygą – jis įsitraukia į tęstinę atminties grandinę. Jie suvokia save ne kaip pasyvius kultūros vartotojus, o kaip aktyvius saugotojus.</p></x-lt>
+<a href="skaitmeniniai-knygnesiai.html" class="pill" style="margin-top: 16px; height: 40px; padding: 0 18px; background: #FDB913; color: #0E1426; font-size: 14px; font-weight: 700">Skaitmeniniai Knygnešiai →</a>
+</div>
+<div style="border-radius: 12px; overflow: hidden; aspect-ratio: 4 / 3"><img src="assets/interns-phones.webp" alt="Interns photographing and checking publication details in books" style="width: 100%; height: 100%; object-fit: cover"></div>
+</div>
+</div>
+</section>
+<footer id="support" style="background: #F4F5F8">
+<div class="wrap" style="padding-top: clamp(24px, 2.8vw, 36px); padding-bottom: clamp(16px, 2vw, 24px)">
+<div class="foot" style="display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 32px; align-items: start">
+<div>
+<p class="mono" style="margin: 0 0 12px; color: #006A44"><x-en>Support</x-en><x-lt>Parama</x-lt></p>
+<p class="disp" style="margin: 0; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.15; font-weight: 600"><x-en>Help build the institutions the next generation will need.</x-en><x-lt>Ateikite paremti darbo, kurį perims kita karta.</x-lt></p>
+<x-en><p style="margin: 14px 0 0; max-width: 34em; font-size: 15px; line-height: 1.55; color: #5F6778">Žiburio Foundation is a Michigan nonprofit established in 2026.</p><p style="margin: 10px 0 0; max-width: 34em; font-size: 15px; line-height: 1.55; color: #5F6778">Our work depends on individuals, families, institutions, and communities who believe that cultural memory deserves careful stewardship and a future beyond any single generation.</p><p style="margin: 10px 0 0; max-width: 34em; font-size: 15px; line-height: 1.55; color: #5F6778">Support helps preserve historical collections, develop public access, train young people, and build the research and educational resources needed to carry this work forward.</p><p style="margin: 10px 0 0; max-width: 34em; font-size: 15px; line-height: 1.55; color: #5F6778">The work produces immediate public value: more accessible archives, more accountable historical knowledge, stronger community stewardship, and young people better able to reason from the records they inherit.</p></x-en><x-lt><p style="margin: 14px 0 0; max-width: 34em; font-size: 15px; line-height: 1.55; color: #5F6778">Žiburio Foundation – 2026 m. Mičigane įsteigta ne pelno siekianti organizacija.</p><p style="margin: 10px 0 0; max-width: 34em; font-size: 15px; line-height: 1.55; color: #5F6778">Mūsų darbas laikosi žmonių, šeimų, įstaigų ir bendruomenių, kurie tiki, kad tautos atmintis verta rūpestingos globos ir ateities, ilgesnės už vieną kartą.</p><p style="margin: 10px 0 0; max-width: 34em; font-size: 15px; line-height: 1.55; color: #5F6778">Parama padeda išsaugoti rinkinius, atverti juos viešai, ugdyti jaunimą ir sukurti tvarką, kuri šį darbą neš toliau.</p></x-lt>
+<a href="mailto:info@ziburiofoundation.org?subject=Support%20the%20Foundation" class="pill" style="margin-top: 20px; background: #FDB913; font-weight: 700"><x-en>Support the Foundation</x-en><x-lt>Paremti</x-lt> →</a>
+</div>
+<div>
+<p class="mono" style="margin: 0 0 14px; color: #006A44"><x-en>Ways to help</x-en><x-lt>Kaip padėti</x-lt></p>
+<a href="mailto:info@ziburiofoundation.org?subject=Support%20the%20Foundation" style="display: block; padding: 10px 0; border-top: 1px solid #E3E6EC; font-size: 16px; font-weight: 600"><x-en>Support the Foundation</x-en><x-lt>Paremti</x-lt> <span style="color: #006A44">→</span></a>
+<a href="mailto:info@ziburiofoundation.org?subject=Entrust%20a%20Collection" style="display: block; padding: 10px 0; border-top: 1px solid #E3E6EC; font-size: 16px; font-weight: 600"><x-en>Entrust a Collection</x-en><x-lt>Perduoti archyvą</x-lt> <span style="color: #006A44">→</span></a>
+<a href="mailto:info@ziburiofoundation.org?subject=Founding%20Supporter" style="display: block; padding: 10px 0; border-top: 1px solid #E3E6EC; border-bottom: 1px solid #E3E6EC; font-size: 16px; font-weight: 600"><x-en>Become a Founding Supporter</x-en><x-lt>Tapti rėmėju</x-lt> <span style="color: #006A44">→</span></a>
+</div>
+<div>
+<p class="mono" style="margin: 0 0 14px; color: #006A44"><x-en>Contact</x-en><x-lt>Kontaktai</x-lt></p>
+<p style="margin: 0; padding: 10px 0 0; border-top: 1px solid #E3E6EC; font-size: 16px; font-weight: 600">Vilija Jurgutis</p>
+<p style="margin: 0 0 10px; font-size: 14px; color: #5F6778"><x-en>Executive Director</x-en><x-lt>Vykdomoji direktorė</x-lt></p>
+<a href="mailto:info@ziburiofoundation.org" style="display: block; padding: 10px 0; border-top: 1px solid #E3E6EC; border-bottom: 1px solid #E3E6EC; font-size: 16px; font-weight: 600">info@ziburiofoundation.org</a>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin-top: clamp(16px, 2vw, 26px); padding-top: 12px; border-top: 1px solid #E3E6EC; font-size: 12.5px; color: #5F6778">
+<span style="display: flex; align-items: center; gap: 9px; color: #0E1426"><img src="assets/mark.png" alt="" style="height: 22px; width: auto"><span class="wordmark" style="--wm1: 15px"><span class="wm1">Žiburio</span><span class="wm2">Foundation</span></span><span style="color: #5F6778">· <x-en>A Michigan nonprofit · est. 2026 · Detroit</x-en><x-lt>Ne pelno siekianti organizacija · 2026 · Detroitas</x-lt> · © 2026</span></span>
+<span><a href="https://archyvas.ziburioltmokykla.org">Žiburio Archive</a> &nbsp;·&nbsp; <a href="https://saveourlithuanianparishes.org">Save Our Lithuanian Parishes</a> &nbsp;·&nbsp; <a href="https://lietuva.ai">Lietuva.ai</a></span>
+</div>
+</div>
+</footer>
+</div>
+
+
+<script>
+(function(){var k='zf-lang';
+try{var v=localStorage.getItem(k);if(v==='lt'||v==='en')document.documentElement.lang=v;}catch(e){}
+function sync(){var l=document.documentElement.lang;
+var b=document.querySelectorAll('.langbtn');for(var i=0;i<b.length;i++){b[i].setAttribute('aria-pressed',String(b[i].getAttribute('data-l')===l));}}
+window.setLang=function(l){document.documentElement.lang=l;try{localStorage.setItem(k,l);}catch(e){}sync();};
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',sync);else sync();})();
+</script>
+</body>
+</html>
