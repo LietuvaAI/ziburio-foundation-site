@@ -28,6 +28,8 @@ Every page retains separate `<x-en>` and `<x-lt>` content. Lithuanian is not gen
 
 The original Support appeal is also retained verbatim in an expandable section on About; the other pages use its short supporting sentence. Protected Lithuanian hero, principle, triad, founding and Support wording is not being submitted as a new translation. Section headings reuse existing Lithuanian labels. Newly added interface/accessibility wording (menu, skip link, image descriptions and snapshot note) is separate from the source prose and should receive the owner's normal language review. Previously unapproved constructed Lithuanian remains unapproved; this design pass does not sign it off.
 
+**Explicit naming amendment, Vilija, 2026-10-21:** Lithuanian surfaces use **Žiburio Fondas**, including prose, page titles, accessible home-link names, copyright and the wordmark. English retains **Žiburio Foundation**. The Lithuanian **FONDAS** line distributes its letters across the existing wordmark width; it does not enlarge or distort the font. This is the sole authorized name substitution in the otherwise preserved founding and Support passages.
+
 ### Local review
 
 Serve this directory with `python3 -m http.server 8766 --bind 127.0.0.1` and open `http://127.0.0.1:8766`. The preview stays on this computer.

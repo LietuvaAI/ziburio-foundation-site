@@ -12,6 +12,8 @@ const output = process.env.QA_OUTPUT || fs.mkdtempSync(path.join(os.tmpdir(), 'z
 const pages = ['index', 'about', 'work', 'skaitmeniniai-knygnesiai', 'principles'];
 const sourceRef = process.env.SOURCE_REF || '8253480'; // Original five-page launch; keep the audit stable after committing.
 const normalize = text => text.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+// Vilija explicitly approved the Lithuanian name change on 2026-10-21.
+const approvedLtName = text => text.replaceAll('Žiburio Foundation', 'Žiburio Fondas');
 
 (async () => {
   const original = Object.fromEntries(pages.map(name => [name, execFileSync('git', ['show', `${sourceRef}:${name}.html`], { cwd: root, encoding: 'utf8' })]));
@@ -26,7 +28,7 @@ const normalize = text => text.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').tri
     const paragraphs = [...block.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/g)].map(match => match[1]);
     for (const text of paragraphs.length ? paragraphs : [block]) {
       if (/^\d+$/.test(normalize(text))) continue; // Display numbers now come from CSS counters.
-      assert(allCopy.includes(normalize(text)), `Protected Lithuanian changed: ${normalize(text)}`);
+      assert(allCopy.includes(normalize(approvedLtName(text))), `Protected Lithuanian changed: ${normalize(text)}`);
     }
   }
   const config = JSON.parse(fs.readFileSync(path.join(root, 'vercel.json'), 'utf8'));
@@ -38,7 +40,7 @@ const normalize = text => text.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').tri
   for (const lang of ['en', 'lt']) {
     const passage = [...founding.matchAll(new RegExp(`<x-${lang}>([\\s\\S]*?)<\\/x-${lang}>`, 'g'))].at(-1)[1];
     for (const paragraph of passage.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/g)) {
-      assert(normalize(updated.about).includes(normalize(paragraph[1])), `Founding statement changed (${lang})`);
+      assert(normalize(updated.about).includes(normalize(lang === 'lt' ? approvedLtName(paragraph[1]) : paragraph[1])), `Founding statement changed (${lang})`);
     }
   }
   const oldHero = original.index.match(/<section id="top"[\s\S]*?<\/section>/)[0];
@@ -51,6 +53,7 @@ const normalize = text => text.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').tri
     const context = await browser.newContext({ reducedMotion: 'reduce' });
     const page = await context.newPage();
     const errors = [];
+    const englishWordmarkWidths = {};
     page.on('pageerror', error => errors.push(error.message));
     for (const width of [360, 390, 768, 1440]) {
       await page.setViewportSize({ width, height: 1000 });
@@ -62,6 +65,15 @@ const normalize = text => text.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').tri
           await page.evaluate(() => Promise.all([...document.images].map(image => image.decode())));
           await page.evaluate(() => document.fonts.ready);
           assert.equal(await page.locator('html').getAttribute('lang'), lang);
+          const wordmarkWidth = await page.locator('.wordmark').evaluate(el => el.getBoundingClientRect().width);
+          if (lang === 'en') englishWordmarkWidths[width] = wordmarkWidth;
+          else {
+            assert(Math.abs(wordmarkWidth - englishWordmarkWidths[width]) < 1, 'Lithuanian wordmark changed the lockup width');
+            const fondasWidth = await page.locator('.wm-lt').evaluate(el => el.getBoundingClientRect().width);
+            assert(Math.abs(fondasWidth - wordmarkWidth) < 1, 'FONDAS does not span the wordmark');
+            assert(!(await page.locator('body').innerText()).includes('Žiburio Foundation'), 'English Foundation name visible in Lithuanian');
+            assert((await page.title()).startsWith('Žiburio Fondas'), 'Lithuanian page title not localized');
+          }
           assert.equal(await page.locator(`.langbtn[data-l="${lang}"]`).getAttribute('aria-pressed'), 'true');
           assert.equal(await page.locator('h1:visible').count(), 1, `${name}/${lang}: visible h1`);
           assert.equal(await page.locator(`x-${lang === 'en' ? 'lt' : 'en'}`).evaluateAll(nodes => nodes.filter(node => getComputedStyle(node).display !== 'none').length), 0, `${name}/${lang}: inactive language visible`);
