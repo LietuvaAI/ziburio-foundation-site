@@ -8,17 +8,33 @@ Hosting: Vercel, team `lietuvaais-projects` (the Foundation's team, where lietuv
 
 **Live.** The `robots` meta lines were removed at go-live (2026-10-20).
 
+**Editorial/layout review, 2026-10-21 — not approved for publication.** These changes reduce repeated copy, remove the three navy project slabs, and vary the page layouts while retaining the mark, fonts, palette, photo hero, and tricolour rule. Review branch: `codex/foundation-design-review-2026-10-21`. Its automatic Vercel deployments are disabled in `vercel.json`; production and other branches are not changed. Do not merge or deploy without Vilija's approval. Existing `LIVE.md` describes the earlier launch, not these changes.
+
+**Ownership stays with Claude Code session “Žiburio Foundation site”**, session `0093e281-2aec-445e-b83a-fa68b39f0dbc`. This is the requested school-site surface-craft pass, not a transfer of the repository or standing work. The PR is the handoff artifact for the owning session.
+
 ## Pages
 
 | File | What it holds |
 |---|---|
-| `index.html` | Hero, mission, short About, the three work sections, the next-generation panel |
-| `about.html` | Mission, the full About, Our purpose, "What is worth the cost of carrying forward?", the founding statement |
-| `work.html` | The three sections in full |
-| `skaitmeniniai-knygnesiai.html` | The internship, written broadly — the Foundation's youth work, not the archive's workflow |
+| `index.html` | Original hero, brief introduction, photo-led internship feature, compact archive and research entries |
+| `about.html` | Foundation background, mission, preservation context, inheritance essay, full founding statement in an expandable section |
+| `work.html` | Internship feature, archive catalogue and figures, Lietuva.ai, parish research; distinct layouts and section links |
+| `skaitmeniniai-knygnesiai.html` | Program, archive work, evidence and learning, community role; the original dated Cardinal Makrickas passage remains expandable |
 | `principles.html` | The four principles and Source · Inference · Authority |
 
-The pages are generated from the Claude Design canvas "Žiburio Foundation site" (`claude.ai/artifact/Qr7YNA5jQ3sXV5ykYMWgtm`) by `build_site.py`, which lives with the canvas in the session scratchpad, not in this repository. Edits can be made directly in these files; if the canvas is rebuilt, re-export and re-check.
+The original pages were generated from the Claude Design canvas "Žiburio Foundation site" (`claude.ai/artifact/Qr7YNA5jQ3sXV5ykYMWgtm`) by `build_site.py`, which lives with the canvas in the session scratchpad, not in this repository. The October 21 revision is edited directly here, with shared `site.css` and `site.js`; there is still no build step. Re-exporting the old canvas would overwrite the new layouts and copy. Reconcile changes rather than replacing these files.
+
+Every page retains separate `<x-en>` and `<x-lt>` content. Lithuanian is not generated from English. Shared navigation, image descriptions, and document titles respond to the language switch. The full founding statement and all four principles retain their original wording in both languages. Archive figures are an explicitly dated snapshot, not a live database query.
+
+The original Support appeal is also retained verbatim in an expandable section on About; the other pages use its short supporting sentence. Protected Lithuanian hero, principle, triad, founding and Support wording is not being submitted as a new translation. Section headings reuse existing Lithuanian labels. Newly added interface/accessibility wording (menu, skip link, image descriptions and snapshot note) is separate from the source prose and should receive the owner's normal language review. Previously unapproved constructed Lithuanian remains unapproved; this design pass does not sign it off.
+
+### Local review
+
+Serve this directory with `python3 -m http.server 8766 --bind 127.0.0.1` and open `http://127.0.0.1:8766`. The preview stays on this computer.
+
+`scripts/check-site.cjs` uses Playwright to check all five pages in EN and LT at 360, 390, 768, and 1440px. It checks language visibility/persistence, working navigation, images, overflow, headings, internal anchors, retained external links, the unchanged home hero, and the full founding statement. It also checks navigation without JavaScript and language switching when storage is blocked. Screenshots go to a temporary directory, not the repository.
+
+Run with `node scripts/check-site.cjs` where Playwright is available (or set `NODE_PATH` to its existing package directory). `CHROME_EXECUTABLE` can select an installed Chrome binary; `SITE_URL` can override the localhost URL. This script never publishes anything.
 
 ## What the Foundation does — the three sections
 
@@ -49,9 +65,9 @@ Her direction across 2026-10-15 → 19: the original Žiburio mark, "tech and cu
 - **Type.** Hanken Grotesk throughout. The wordmark is the school's lockup, set in Oswald: ŽIBURIO over FOUNDATION, both lines flush left and right (ŽIBURIO is tracked to 0.1175em so the two lines measure the same).
 - **Mark.** The original school mark with its navy square removed and the glyph recoloured navy; the tricolour keeps the original's geometry exactly. `assets/mark.png`. A white version for dark grounds is built but not currently used.
 - **Colour.** Navy `#0E1426`, yellow `#FDB913`, green `#006A44` for section labels, red only in the tricolour rule. The 3px geltona–žalia–raudona rule under the hero follows the Save Our Lithuanian Parishes pattern.
-- **Work boxes.** Navy, image left at 4:3, text right, yellow number, a yellow primary link and outlined secondary links.
+- **Section rhythm.** Open white backgrounds, photography, fine rules, an occasional yellow accent, and reading-width prose. The three repeated navy work boxes are removed. Home is an overview; the full project descriptions belong on Our work. Longer source text remains available without interrupting the main reading path.
 
-**Images.** All are Vilija's own photographs or screenshots of her own sites; consent for the student photographs and names is on record with her (`memory/student-images-consent.md`). Shipped in `assets/`: `interns-table.webp` (hero, ceiling cropped), `sigita-lightbox.webp`, `interns-gloves.webp`, `interns-phones.webp`, `interns-cataloging.webp`, `archive-catalog.webp`, `solp-site.webp`. Retained but no longer used by any page: `assets/books/` (public-domain pre-1931 imprints) and `ziburio-mark.png`. **Not in this repository**, by her permission-first rule, kept in the gitignored `private/` folder: Knygnešys 1864–1904, I (Kaunas 1938) and three lietuva.ai cutouts; each needs its rights recorded before it can be committed here. The notebook and DP images remain in this repository's history at commit 497a8a2.
+**Images.** All are Vilija's own photographs or screenshots of her own sites; consent for the student photographs and names is on record with her (`memory/student-images-consent.md`). Shipped in `assets/`: `interns-table.webp` (hero, ceiling cropped), `sigita-lightbox.webp`, `interns-gloves.webp`, `interns-phones.webp`, `interns-cataloging.webp`, `archive-catalog.webp`, `solp-site.webp`. The home archive entry now uses the existing `assets/books/kudirka-1909-cover.webp`; the other public-domain pre-1931 imprints and `ziburio-mark.png` remain unused. **Not in this repository**, by her permission-first rule, kept in the gitignored `private/` folder: Knygnešys 1864–1904, I (Kaunas 1938) and three lietuva.ai cutouts; each needs its rights recorded before it can be committed here. The notebook and DP images remain in this repository's history at commit 497a8a2.
 
 ## Rules that bind this site
 
