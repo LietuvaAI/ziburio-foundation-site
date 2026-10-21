@@ -40,6 +40,22 @@ The original Support appeal is also retained verbatim in an expandable section o
 
 **Project grouping, Vilija, 2026-10-21:** restore a separate visible box around each of the three Our Work projects. These use compact bordered containers and small colour accents, not the former solid navy slabs; the existing varied internal layouts and bilingual copy remain intact. The diary and Knygnešys images remain outside this change pending the separate publication-permission response.
 
+### Incorporation-purpose coverage review — 2026-10-21
+
+Compared against Article II in `culturenet-brain/docs/legal/formation/articles-of-incorporation-AS-FILED-verbatim.md`, not an earlier draft. This is an editorial coverage check, not a legal compliance opinion. Public wording remains a paraphrase; the user-approved mission includes “cultural,” whereas the filed clause says “Lithuanian knowledge.”
+
+| Filed purpose | Public coverage |
+|---|---|
+| II(a), intergenerational mission | About opening mission |
+| II(b), permanent stewardship and governed access to diaspora materials | About “Built to continue”; Our Work archive; Principles access/rights |
+| II(c), youth and public education, cultural literacy, research, language, emerging technology | About education and cooperation; internship; Principles technology section |
+| II(d), provenance, context, authenticity, intelligible and generative inheritance | Principles, source workbench, connected collections |
+| II(e), new cultural, educational and scholarly work | Our Work research section |
+| II(f), cooperation and assistance to other communities | About “Built to continue” |
+| II closing sentence, continuity beyond a host institution | About “Built to continue” |
+
+New EN/LT paragraphs make the previously implicit points explicit and add a light technology explanation. Their Lithuanian is proposed copy for owner review, not a replacement for independently authored existing passages. Administrative filing provisions, personal addresses, tax-code clauses and financial/legal boilerplate are not added to public narrative; no claim of recognition or deductibility is made. Other Articles are not represented as fully reproduced on the site.
+
 ### Local review
 
 Serve this directory with `python3 -m http.server 8766 --bind 127.0.0.1` and open `http://127.0.0.1:8766`. The preview stays on this computer.
