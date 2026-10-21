@@ -45,7 +45,8 @@ const approvedLtName = text => text.replaceAll('Žiburio Foundation', 'Žiburio 
   }
   const oldHero = original.index.match(/<section id="top"[\s\S]*?<\/section>/)[0];
   const newHero = updated.index.match(/<section id="top"[\s\S]*?<\/section>/)[0];
-  assert.equal(normalize(newHero), normalize(oldHero), 'Home hero copy changed');
+  const requestedHeroRevision = oldHero.replace('Preserving the sources of Lithuanian cultural memory, strengthening the institutions that transmit it, and preparing a new generation to carry that inheritance into the age of artificial intelligence.', 'Carrying Lithuanian cultural memory into the age of artificial intelligence—through the sources, institutions, and people who give it meaning, and a new generation ready to make it their own.');
+  assert.equal(normalize(newHero), normalize(requestedHeroRevision), 'Unexpected change to hero copy outside the requested English reframing');
 
   const browser = await chromium.launch({ headless: true, ...(process.env.CHROME_EXECUTABLE ? { executablePath: process.env.CHROME_EXECUTABLE } : {}) });
   const results = [];
@@ -121,6 +122,6 @@ const approvedLtName = text => text.replaceAll('Žiburio Foundation', 'Žiburio 
     await privatePage.locator('.langbtn[data-l="lt"]').click();
     assert.equal(await privatePage.locator('html').getAttribute('lang'), 'lt', 'Language switch requires localStorage');
     await noStorage.close();
-    console.log(JSON.stringify({ passed: results.length, languages: ['en', 'lt'], widths: [360, 390, 768, 1440], checks: ['language isolation', 'image loading', 'heading structure', 'overflow', 'links', 'mobile menu', 'language persistence', 'expanded founding and support statements', 'no-JS navigation', 'blocked-storage switching', 'hero unchanged', 'founding statement intact', 'protected Lithuanian retained', 'no restricted public claims or forms', 'review branch auto-deployment disabled', 'original external links retained'], screenshots: output }, null, 2));
+    console.log(JSON.stringify({ passed: results.length, languages: ['en', 'lt'], widths: [360, 390, 768, 1440], checks: ['language isolation', 'image loading', 'heading structure', 'overflow', 'links', 'mobile menu', 'language persistence', 'expanded founding and support statements', 'no-JS navigation', 'blocked-storage switching', 'hero matches requested English reframing; Lithuanian unchanged', 'founding statement intact', 'protected Lithuanian retained', 'no restricted public claims or forms', 'review branch auto-deployment disabled', 'original external links retained'], screenshots: output }, null, 2));
   } finally { await browser.close(); }
 })().catch(error => { console.error(error); process.exitCode = 1; });
