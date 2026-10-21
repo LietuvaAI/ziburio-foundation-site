@@ -8,17 +8,61 @@ Hosting: Vercel, team `lietuvaais-projects` (the Foundation's team, where lietuv
 
 **Live.** The `robots` meta lines were removed at go-live (2026-10-20).
 
+**Editorial/layout review, 2026-10-21 — not approved for publication.** These changes reduce repeated copy, remove the three navy project slabs, and vary the page layouts while retaining the mark, fonts, palette, photo hero, and tricolour rule. Review branch: `codex/foundation-design-review-2026-10-21`. Its automatic Vercel deployments are disabled in `vercel.json`; production and other branches are not changed. Do not merge or deploy without Vilija's approval. Existing `LIVE.md` describes the earlier launch, not these changes.
+
+**Ownership stays with Claude Code session “Žiburio Foundation site”**, session `0093e281-2aec-445e-b83a-fa68b39f0dbc`. This is the requested school-site surface-craft pass, not a transfer of the repository or standing work. The PR is the handoff artifact for the owning session.
+
 ## Pages
 
 | File | What it holds |
 |---|---|
-| `index.html` | Hero, mission, short About, the three work sections, the next-generation panel |
-| `about.html` | Mission, the full About, Our purpose, "What is worth the cost of carrying forward?", the founding statement |
-| `work.html` | The three sections in full |
-| `skaitmeniniai-knygnesiai.html` | The internship, written broadly — the Foundation's youth work, not the archive's workflow |
+| `index.html` | Original hero, editorial introduction, enlarged student feature, inspectable archival source workbench, archive and research entries |
+| `about.html` | Foundation background, mission, cultural continuity and context, inheritance essay, full founding statement in an expandable section |
+| `work.html` | Internship feature, archive catalogue and figures, Lietuva.ai, parish research; distinct layouts and section links |
+| `skaitmeniniai-knygnesiai.html` | Program, archive work, evidence and learning, community role; the original dated Cardinal Makrickas passage remains expandable |
 | `principles.html` | The four principles and Source · Inference · Authority |
 
-The pages are generated from the Claude Design canvas "Žiburio Foundation site" (`claude.ai/artifact/Qr7YNA5jQ3sXV5ykYMWgtm`) by `build_site.py`, which lives with the canvas in the session scratchpad, not in this repository. Edits can be made directly in these files; if the canvas is rebuilt, re-export and re-check.
+The original pages were generated from the Claude Design canvas "Žiburio Foundation site" (`claude.ai/artifact/Qr7YNA5jQ3sXV5ykYMWgtm`) by `build_site.py`, which lives with the canvas in the session scratchpad, not in this repository. The October 21 revision is edited directly here, with shared `site.css` and `site.js`; there is still no build step. Re-exporting the old canvas would overwrite the new layouts and copy. Reconcile changes rather than replacing these files.
+
+Every page retains separate `<x-en>` and `<x-lt>` content. Lithuanian is not generated from English. Shared navigation, image descriptions, and document titles respond to the language switch. The full founding statement and all four principles retain their original wording in both languages. Archive figures are an explicitly dated snapshot, not a live database query.
+
+The original Support appeal is also retained verbatim in an expandable section on About; English support summaries now relate to the subject of each page. Protected Lithuanian hero, principle, triad, founding and Support wording is not being submitted as a new translation. Section headings reuse existing Lithuanian labels. Newly added interface/accessibility wording (menu, skip link, image descriptions and snapshot note) is separate from the source prose and should receive the owner's normal language review. Previously unapproved constructed Lithuanian remains unapproved; this design pass does not sign it off.
+
+**Explicit naming amendment, Vilija, 2026-10-21:** Lithuanian surfaces use **Žiburio Fondas**, including prose, page titles, accessible home-link names, copyright and the wordmark. English retains **Žiburio Foundation**. The Lithuanian **FONDAS** line distributes its letters across the existing wordmark width; it does not enlarge or distort the font. This is the sole authorized name substitution in the otherwise preserved founding and Support passages.
+
+**Editorial correction, Vilija, 2026-10-21:** the activity-list introduction was too reductive. Restore the former “Memory is not simply a record of the past…” lead and develop the cultural-continuity purpose underneath it. The new English hero, overview and project summaries emphasize living inheritance, relationships, institutions, evidence, judgment and new cultural work, rather than leading with “preserve.” This is proposed public-mission prose, not commercial positioning or a claim that new technology has already been delivered. Read-only sources: `culturenet-brain/docs/philosophy/culturenet-foundations.md` (memory, context, evidence); `docs/strategy/current-thinking-2026-07-14-foundation-identity-and-unique-capability.md` (Foundation purpose and intergenerational stewardship); `docs/strategy/current-thinking-2026-07-16-mission-continuity-three-layer-language.md` (continuity as mission, AI as means); `docs/strategy/current-thinking-2026-07-15-drift-correction-cultural-memory-infrastructure.md` (living cultural systems and new work from authentic sources); and VilijaOS's `voice/public-presence/foundation-first-launch-set-2026-10-15.md` (Foundation-first public register and stealth hold). No restricted names enter the public HTML. Lithuanian remains independently written and unchanged by this English pass. The original founding/Support documents and principles retain their wording, including historical uses of “preserve”; this revision changes the framing, not the source record.
+
+**Site-wide follow-through, Vilija, 2026-10-21 (“same goes for the rest of the site”):** the same sources above inform the remaining English editorial revisions. About explains the institutional and intergenerational purpose; Our work connects the three areas without reducing the archive to storage; the internship is an apprenticeship in cultural inheritance and historical judgment; Principles explains why evidence, interpretation and institutional decisions must remain distinguishable. Page-specific support summaries replace the repeated English sentence. The internship count now uses the canonical “155 parishes and other institutions” and “seven graduates.” All Lithuanian blocks, the four principles, the Source/Inference/Authority definitions, and the full founding/Support passages remain unchanged in this follow-through. New prose is proposed review copy, not a new canonical source or a claim of Vilija's wording approval. No merge or publication is authorized.
+
+**Visual direction preview, Vilija, 2026-10-21:** “youth, AI, culture” is explored on the homepage through the students' own photography, contrasting editorial type scales, and a source workbench built around the existing public-domain 1909 Kudirka title-page image. The title, preparer (Juozas Gabrys), place (Tilžė), and year are visible on that image; this is a manually checked editorial example, not a live AI extraction demo. The full-resolution image can be opened from the page. New bilingual source-workbench captions are proposed copy; their Lithuanian needs the owner's normal review. Existing Lithuanian passages remain unchanged. The future hero video awaits Vilija's footage. No stock imagery, simulated software UI, new tracking, merge, or deployment.
+
+**Follow-up, Vilija, 2026-10-21:** replace the workbench's repeated Raštai example with the existing `kankles-1895.webp` image. Its visible imprint supports “Lietuvos Kanklės,” “V. Kalvaitis,” and “Tilžė · 1895”; these replace the prior example's metadata, alt text and full-size links. Expand the bilingual technology explanation to describe digital capture, AI-assisted reading/translation and identification, human review, and traceable linked records, without claiming this example was automatically processed. Reduce section padding and layout gaps across all five pages while retaining readable type and touch targets. New Lithuanian explanatory copy remains proposed for language review.
+
+**Project grouping, Vilija, 2026-10-21:** restore a separate visible box around each of the three Our Work projects. These use compact bordered containers and small colour accents, not the former solid navy slabs; the existing varied internal layouts and bilingual copy remain intact. The diary and Knygnešys images remain outside this change pending the separate publication-permission response.
+
+### Incorporation-purpose coverage review — 2026-10-21
+
+Compared against Article II in `culturenet-brain/docs/legal/formation/articles-of-incorporation-AS-FILED-verbatim.md`, not an earlier draft. This is an editorial coverage check, not a legal compliance opinion. Public wording remains a paraphrase; the user-approved mission includes “cultural,” whereas the filed clause says “Lithuanian knowledge.”
+
+| Filed purpose | Public coverage |
+|---|---|
+| II(a), intergenerational mission | About opening mission |
+| II(b), permanent stewardship and governed access to diaspora materials | About “Built to continue”; Our Work archive; Principles access/rights |
+| II(c), youth and public education, cultural literacy, research, language, emerging technology | About education and cooperation; internship; Principles technology section |
+| II(d), provenance, context, authenticity, intelligible and generative inheritance | Principles, source workbench, connected collections |
+| II(e), new cultural, educational and scholarly work | Our Work research section |
+| II(f), cooperation and assistance to other communities | About “Built to continue” |
+| II closing sentence, continuity beyond a host institution | About “Built to continue” |
+
+New EN/LT paragraphs make the previously implicit points explicit and add a light technology explanation. Their Lithuanian is proposed copy for owner review, not a replacement for independently authored existing passages. Administrative filing provisions, personal addresses, tax-code clauses and financial/legal boilerplate are not added to public narrative; no claim of recognition or deductibility is made. Other Articles are not represented as fully reproduced on the site.
+
+### Local review
+
+Serve this directory with `python3 -m http.server 8766 --bind 127.0.0.1` and open `http://127.0.0.1:8766`. The preview stays on this computer.
+
+`scripts/check-site.cjs` uses Playwright to check all five pages in EN and LT at 360, 390, 768, and 1440px. It checks language visibility/persistence, working navigation, images, overflow, headings, internal anchors, retained external links, the home hero with Vilija's requested English revision, and the full founding statement. It also checks navigation without JavaScript and language switching when storage is blocked. Screenshots go to a temporary directory, not the repository.
+
+Run with `node scripts/check-site.cjs` where Playwright is available (or set `NODE_PATH` to its existing package directory). `CHROME_EXECUTABLE` can select an installed Chrome binary; `SITE_URL` can override the localhost URL. This script never publishes anything.
 
 ## What the Foundation does — the three sections
 
@@ -49,9 +93,9 @@ Her direction across 2026-10-15 → 19: the original Žiburio mark, "tech and cu
 - **Type.** Hanken Grotesk throughout. The wordmark is the school's lockup, set in Oswald: ŽIBURIO over FOUNDATION, both lines flush left and right (ŽIBURIO is tracked to 0.1175em so the two lines measure the same).
 - **Mark.** The original school mark with its navy square removed and the glyph recoloured navy; the tricolour keeps the original's geometry exactly. `assets/mark.png`. A white version for dark grounds is built but not currently used.
 - **Colour.** Navy `#0E1426`, yellow `#FDB913`, green `#006A44` for section labels, red only in the tricolour rule. The 3px geltona–žalia–raudona rule under the hero follows the Save Our Lithuanian Parishes pattern.
-- **Work boxes.** Navy, image left at 4:3, text right, yellow number, a yellow primary link and outlined secondary links.
+- **Section rhythm.** Open white backgrounds, photography, fine rules, an occasional yellow accent, and reading-width prose. The three repeated navy work boxes are removed. Home is an overview; the full project descriptions belong on Our work. Longer source text remains available without interrupting the main reading path.
 
-**Images.** All are Vilija's own photographs or screenshots of her own sites; consent for the student photographs and names is on record with her (`memory/student-images-consent.md`). Shipped in `assets/`: `interns-table.webp` (hero, ceiling cropped), `sigita-lightbox.webp`, `interns-gloves.webp`, `interns-phones.webp`, `interns-cataloging.webp`, `archive-catalog.webp`, `solp-site.webp`. Retained but no longer used by any page: `assets/books/` (public-domain pre-1931 imprints) and `ziburio-mark.png`. **Not in this repository**, by her permission-first rule, kept in the gitignored `private/` folder: Knygnešys 1864–1904, I (Kaunas 1938) and three lietuva.ai cutouts; each needs its rights recorded before it can be committed here. The notebook and DP images remain in this repository's history at commit 497a8a2.
+**Images.** All are Vilija's own photographs or screenshots of her own sites; consent for the student photographs and names is on record with her (`memory/student-images-consent.md`). Shipped in `assets/`: `interns-table.webp` (hero, ceiling cropped), `sigita-lightbox.webp`, `interns-gloves.webp`, `interns-phones.webp`, `interns-cataloging.webp`, `archive-catalog.webp`, `solp-site.webp`. The home archive entry now uses the existing `assets/books/kudirka-1909-cover.webp`; the other public-domain pre-1931 imprints and `ziburio-mark.png` remain unused. **Not in this repository**, by her permission-first rule, kept in the gitignored `private/` folder: Knygnešys 1864–1904, I (Kaunas 1938) and three lietuva.ai cutouts; each needs its rights recorded before it can be committed here. The notebook and DP images remain in this repository's history at commit 497a8a2.
 
 ## Rules that bind this site
 
