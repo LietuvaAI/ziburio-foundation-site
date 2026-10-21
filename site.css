@@ -223,4 +223,8 @@ html[lang="en"] .langbtn[data-l="en"],html[lang="lt"] .langbtn[data-l="lt"]{back
  .principle-row{padding-block:18px}.support-grid{gap:16px}
  .definitions{gap:18px;margin-top:20px}.definitions div{padding-top:14px}
 }
+.project-box{border:1px solid #C9CED6;border-top:3px solid var(--yellow);border-radius:4px;padding:28px;margin-bottom:24px;background:white}
+.project-box#archive{background:#F8F7F3}
+.project-box#research{border-top-color:var(--green)}
+@media(max-width:600px){.project-box{padding:20px 16px;margin-bottom:20px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.drift{animation:none}}

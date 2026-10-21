@@ -38,6 +38,8 @@ The original Support appeal is also retained verbatim in an expandable section o
 
 **Follow-up, Vilija, 2026-10-21:** replace the workbench's repeated Raštai example with the existing `kankles-1895.webp` image. Its visible imprint supports “Lietuvos Kanklės,” “V. Kalvaitis,” and “Tilžė · 1895”; these replace the prior example's metadata, alt text and full-size links. Expand the bilingual technology explanation to describe digital capture, AI-assisted reading/translation and identification, human review, and traceable linked records, without claiming this example was automatically processed. Reduce section padding and layout gaps across all five pages while retaining readable type and touch targets. New Lithuanian explanatory copy remains proposed for language review.
 
+**Project grouping, Vilija, 2026-10-21:** restore a separate visible box around each of the three Our Work projects. These use compact bordered containers and small colour accents, not the former solid navy slabs; the existing varied internal layouts and bilingual copy remain intact. The diary and Knygnešys images remain outside this change pending the separate publication-permission response.
+
 ### Local review
 
 Serve this directory with `python3 -m http.server 8766 --bind 127.0.0.1` and open `http://127.0.0.1:8766`. The preview stays on this computer.
