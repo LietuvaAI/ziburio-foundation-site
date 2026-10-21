@@ -36,6 +36,8 @@ The original Support appeal is also retained verbatim in an expandable section o
 
 **Visual direction preview, Vilija, 2026-10-21:** “youth, AI, culture” is explored on the homepage through the students' own photography, contrasting editorial type scales, and a source workbench built around the existing public-domain 1909 Kudirka title-page image. The title, preparer (Juozas Gabrys), place (Tilžė), and year are visible on that image; this is a manually checked editorial example, not a live AI extraction demo. The full-resolution image can be opened from the page. New bilingual source-workbench captions are proposed copy; their Lithuanian needs the owner's normal review. Existing Lithuanian passages remain unchanged. The future hero video awaits Vilija's footage. No stock imagery, simulated software UI, new tracking, merge, or deployment.
 
+**Follow-up, Vilija, 2026-10-21:** replace the workbench's repeated Raštai example with the existing `kankles-1895.webp` image. Its visible imprint supports “Lietuvos Kanklės,” “V. Kalvaitis,” and “Tilžė · 1895”; these replace the prior example's metadata, alt text and full-size links. Expand the bilingual technology explanation to describe digital capture, AI-assisted reading/translation and identification, human review, and traceable linked records, without claiming this example was automatically processed. Reduce section padding and layout gaps across all five pages while retaining readable type and touch targets. New Lithuanian explanatory copy remains proposed for language review.
+
 ### Local review
 
 Serve this directory with `python3 -m http.server 8766 --bind 127.0.0.1` and open `http://127.0.0.1:8766`. The preview stays on this computer.
