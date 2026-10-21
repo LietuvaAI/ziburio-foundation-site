@@ -227,4 +227,14 @@ html[lang="en"] .langbtn[data-l="en"],html[lang="lt"] .langbtn[data-l="lt"]{back
 .project-box#archive{background:#F8F7F3}
 .project-box#research{border-top-color:var(--green)}
 @media(max-width:600px){.project-box{padding:20px 16px;margin-bottom:20px}}
+/* Principles uses one editorial column instead of alternating inset/full-width grids. */
+.principles-page main>.wrap{max-width:1000px}
+.principles-page .page-head,.principles-page .reading{max-width:none;margin-inline:0}
+.principles-page .page-head+.reading.section{padding-top:0}
+.principles-page .principle-row{display:block;padding-block:24px}
+.principles-page .principle-row:before{display:block;padding:0;margin-bottom:10px;font-size:12px;font-weight:700;letter-spacing:.1em}
+.principles-page .principle-row h2{font-size:clamp(25px,2.5vw,32px);margin-bottom:12px;text-wrap:pretty}
+.principles-page .principle-row p{max-width:none}
+.principles-page .definitions{gap:24px}
+@media(max-width:600px){.principles-page .principle-row{padding-block:20px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.drift{animation:none}}
