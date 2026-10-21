@@ -10,7 +10,7 @@ button{font:inherit}
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--green);outline-offset:5px}
 p{font-size:17px;line-height:1.65;color:var(--text);margin:0 0 1em}
 h1,h2,h3,p{overflow-wrap:break-word}
-h1,h2,h3,.disp{letter-spacing:-.035em;font-weight:500}
+h1,h2,h3,.disp{letter-spacing:-.035em;font-weight:500;text-wrap:balance}
 h1{font-size:clamp(38px,5.5vw,72px);line-height:1.05;margin:0 0 24px}
 h2{font-size:clamp(28px,3.2vw,44px);line-height:1.12;margin:0 0 20px}
 h3{font-size:clamp(23px,2.3vw,30px);line-height:1.2;margin:0 0 14px}
@@ -20,7 +20,7 @@ html[lang="lt"] x-en,html[lang="en"] x-lt{display:none!important}
 .section{padding-block:64px}
 .rule{border-top:1px solid var(--line)}
 .eyebrow,.mono{font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--green);margin:0 0 18px}
-.lead{font-size:clamp(20px,2.2vw,28px);line-height:1.45;max-width:36em;letter-spacing:-.02em}
+.lead{font-size:clamp(20px,2.2vw,28px);line-height:1.45;max-width:36em;letter-spacing:-.02em;text-wrap:pretty}
 .small{font-size:14px;line-height:1.6;color:var(--muted)}
 .text-link{display:inline-block;font-size:16px;font-weight:600;border-bottom:1px solid var(--ink);padding-block:4px;margin-top:8px}
 .text-link:hover{color:var(--green);border-color:var(--green)}
@@ -127,6 +127,7 @@ html[lang="en"] .langbtn[data-l="en"],html[lang="lt"] .langbtn[data-l="lt"]{back
  .home-feature,.project-feature,.research-layout,.archive-layout,.story-grid,.support-grid{grid-template-columns:1fr;gap:32px}
  .home-feature{grid-template-columns:1.1fr 1fr;gap:28px}.work-pair{gap:32px}.archive-preview{grid-template-columns:80px 1fr;gap:20px}
  .project-feature figure{position:static}.project-feature img{aspect-ratio:3/2}.research-layout figure{max-width:640px}
+ .mission{margin-block:0}
  .principle-row{grid-template-columns:36px 1fr;gap:12px 20px}.principle-row p{grid-column:2}.principle-row h2{margin:0}
  .definitions{gap:24px}.section{padding-block:48px}.page-head{padding-top:44px}
 }
@@ -135,6 +136,8 @@ html[lang="en"] .langbtn[data-l="en"],html[lang="lt"] .langbtn[data-l="lt"]{back
  .home-feature,.work-pair,.definitions{grid-template-columns:1fr}.home-feature{padding-bottom:36px}.home-feature .feature-copy{max-width:none}.work-pair{padding-block:30px 44px;gap:36px}.work-pair article+article{border-top:1px solid var(--line);padding-top:30px}
  .work-intro{align-items:start;gap:12px}.work-intro h2{font-size:28px}.work-intro .text-link{font-size:14px;white-space:nowrap}
  .intro{padding-block:36px}.page-head{padding-block:36px 30px}.section{padding-block:36px}.jump-links{gap:16px}.pullquote{padding-block:12px}.mission{padding-left:20px}
+ .page-head+.reading.section{padding-top:8px}
+ .project-feature figure{order:-1}
  .hero .pill{font-size:14px;padding-inline:16px}.hero .wrap{padding-inline:20px}.program-opening{padding-block:36px}
  .support-grid{gap:20px}.support-section{padding-block:36px}.footer-top{display:block}.footer-links{margin-top:20px}.figures dt{font-size:40px}
 }
