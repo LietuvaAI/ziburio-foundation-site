@@ -71,6 +71,8 @@ const approvedLtName = text => text.replaceAll('Žiburio Foundation', 'Žiburio 
             assert(Math.abs(wordmarkWidth - englishWordmarkWidths[width]) < 1, 'Lithuanian wordmark changed the lockup width');
             const fondasWidth = await page.locator('.wm-lt').evaluate(el => el.getBoundingClientRect().width);
             assert(Math.abs(fondasWidth - wordmarkWidth) < 1, 'FONDAS does not span the wordmark');
+            assert.equal((await page.locator('.wm2 x-lt').textContent()).replace(/\s/g, ''), 'FONDAS', 'Duplicate Lithuanian wordmark text');
+            assert.equal(await page.locator('.brand').getAttribute('aria-label'), 'Žiburio Fondas pradžia', 'Accessible brand name missing');
             assert(!(await page.locator('body').innerText()).includes('Žiburio Foundation'), 'English Foundation name visible in Lithuanian');
             assert((await page.title()).startsWith('Žiburio Fondas'), 'Lithuanian page title not localized');
           }
@@ -92,6 +94,7 @@ const approvedLtName = text => text.replaceAll('Žiburio Foundation', 'Žiburio 
           if (name === 'index') assert.equal(await page.locator('.hero a[href="about.html"]').evaluate(el => getComputedStyle(el).backgroundColor), 'rgba(0, 0, 0, 0)', 'Outlined hero link lost its transparent background');
           await page.evaluate(() => document.activeElement?.blur());
           if (width === 390 || width === 1440) await page.screenshot({ path: path.join(output, `${name}-${lang}-${width}.png`), fullPage: true, animations: 'disabled' });
+          if (name === 'index' && (width === 390 || width === 1440)) await page.locator('.brand').screenshot({ path: path.join(output, `wordmark-${lang}-${width}.png`) });
           results.push(`${name}/${lang}/${width}`);
         }
       }
