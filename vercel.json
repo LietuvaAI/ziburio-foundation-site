@@ -2,6 +2,11 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
+  "git": {
+    "deploymentEnabled": {
+      "codex/foundation-design-review-2026-10-21": false
+    }
+  },
   "headers": [
     {
       "source": "/(.*)",

@@ -1,0 +1,27 @@
+Žiburio Foundation — three homepage design studies
+
+Create three visually distinct homepage concepts for a small Lithuanian cultural foundation. These are review prototypes, not a production launch. Keep the same content in each so the owner can judge the design, not changing words. The owner is not a designer: give her visual choices, not configuration chores.
+
+The Foundation connects cultural inheritance with young people doing real work. It is not an AI startup. Show real books, hands, students and archival materials; no generated people, stock photographs or invented software interfaces. Keep existing Hanken Grotesk typography and the original Žiburio mark with Oswald two-line wordmark. English brand: Žiburio Foundation. Lithuanian: Žiburio Fondas. Logo assets and approved photographs will be supplied separately. Until supplied, use clearly labeled image placeholders, not substitutes.
+
+Common content:
+Hero: Memory. Inheritance. Continuity.
+Mission: To ensure that Lithuanian cultural knowledge, memory, faith, language, institutions, and archives continue to illuminate future generations.
+Projects, only these three:
+1. Skaitmeniniai Knygnešiai — the internship. Students catalogue books, scan pages, and check records against the originals. Link to the Foundation's program explanation and the students' work in the Žiburio Archive.
+2. Žiburio Archive. Books, periodicals and documents from the Lithuanian diaspora, with photographs and catalogue records. External link: https://archyvas.ziburioltmokykla.org/
+3. Save Our Lithuanian Parishes (SOLP). Research into Lithuanian churches and community institutions in the United States. External link: https://saveourlithuanianparishes.org/
+The Knygnešių book is a later project. Do not add it, a coming-soon card, or a blog yet.
+Contact: info@ziburiofoundation.org. No director's name or title.
+Support: link to a short Support page. A donation service is not established; do not invent a donation URL or working payment flow.
+Footer: black background, white text; email, Archive and SOLP links; © 2026 Žiburio Foundation; A Michigan nonprofit · established 2026.
+
+Direction A: a contemporary cultural institution. Confident type, one powerful documentary photograph, precise alignment, compact project explanations. Calm but memorable.
+Direction B: a youth-led working archive. An intentionally composed sequence of real photographs, book covers and page details with energetic cropping. Clear, readable and approachable; not a collage of random stickers.
+Direction C: a digital exhibition. Give the books and their human stories presence through scale, deliberate transitions and restrained interaction. Avoid generic SaaS cards, excessive borders or decorative effects.
+
+Constraints: keep the existing font and mark; navy, white and black with sparing yellow if needed. No green accents, tricolour divider, juosta, folk-pattern decoration, rotated labels, giant flat colour slabs, fake statistics, testimonials or taxonomy. No mentions of Lietuva.ai, CultureNet or Labs. No tax-exemption or deductibility claims. Avoid repetition: each section has one job. Do not shrink headings or create tiny body type. Keep reading order natural and align shared edges. Responsive mobile layout, keyboard focus and reduced-motion support are required.
+
+Bilingual requirement: retain EN/LT navigation and existing independent Lithuanian copy when source files are supplied. Never translate or overwrite it automatically. The production site uses x-en and x-lt elements with CSS switching; don't silently discard either language. English-first visual studies may leave explicitly marked Lithuanian slots rather than invent translations.
+
+Output: three distinct complete homepage previews for comparison, with a one-sentence explanation of each direction. Do not publish to the Foundation's domain or alter its repository. No subscription purchase or hosting migration is authorized.

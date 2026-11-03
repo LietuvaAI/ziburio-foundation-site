@@ -1,0 +1,515 @@
+/*
+ * Final local review layer.
+ * One shared editorial grid for every page; page-specific layouts below.
+ */
+:root {
+  --zf-ink: #0e1426;
+  --zf-text: #344052;
+  --zf-muted: #667080;
+  --zf-line: #dde1dc;
+  --zf-wash: #f4f5f0;
+  --zf-warm: #f7f3e8;
+  --zf-page: 1180px;
+  --zf-gutter: clamp(20px, 4vw, 56px);
+  --zf-section: clamp(46px, 5.5vw, 72px);
+}
+
+body {
+  background: #fff;
+  color: var(--zf-ink);
+}
+
+.wrap,
+.hero .wrap,
+.principles-page main > .wrap,
+.workshop-home .intro {
+  width: 100%;
+  max-width: var(--zf-page);
+  padding-inline: var(--zf-gutter);
+}
+
+p { color: var(--zf-text); }
+.section { padding-block: var(--zf-section); }
+.rule { border: 0; }
+
+/* Compact header borrowed from the useful part of the Magic Patterns study. */
+.site-header,
+.journal-home .site-header {
+  min-height: 66px;
+  max-width: 1320px;
+  padding-block: 9px;
+  gap: 30px;
+  background: #fff;
+}
+.brand,
+.journal-home .brand { gap: 8px; }
+.brand img,
+.journal-home .brand img { width: auto; height: 30px; }
+.wordmark,
+.journal-home .wordmark { --wm1: 15.5px; }
+.site-nav,
+.journal-home .site-nav {
+  gap: 24px;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: -.005em;
+}
+.site-nav a,
+.journal-home .site-nav a { padding-block: 6px; }
+.header-tools,
+.journal-home .header-tools { gap: 12px; }
+.langbtn,
+.journal-home .langbtn { min-height: 31px; padding-inline: 9px; font-size: 10px; }
+
+/* Shared subpage opening: large title, readable statement, common baseline. */
+.page-head {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px;
+  align-items: end;
+  padding-block: clamp(46px, 6vw, 78px) clamp(34px, 4vw, 54px);
+  margin: 0;
+  border: 0;
+}
+.page-head h1 {
+  grid-column: 1 / span 6;
+  max-width: 9ch;
+  margin: 0;
+  font-size: clamp(58px, 7.2vw, 104px);
+  line-height: .92;
+  letter-spacing: -.065em;
+  font-weight: 500;
+}
+.page-head > x-en,
+.page-head > x-lt {
+  display: block;
+  grid-column: 7 / -1;
+}
+.page-head .lead {
+  max-width: 36ch;
+  margin: 0;
+  font-size: clamp(22px, 2.2vw, 31px);
+  line-height: 1.34;
+}
+.jump-links {
+  grid-column: 7 / -1;
+  margin-top: 10px;
+  gap: 10px 26px;
+}
+.jump-links a { font-size: 13px; }
+
+/* Long-form sections use a stable label/content relationship. */
+.reading,
+.principles-page .reading { max-width: none; }
+.reading:has(> h2),
+.principles-page .reading:has(> h2) {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px;
+}
+.reading:has(> h2) > h2 {
+  grid-column: 1 / span 5;
+  max-width: 12ch;
+  font-size: clamp(34px, 4vw, 56px);
+  line-height: 1.02;
+  letter-spacing: -.05em;
+}
+.reading:has(> h2) > x-en,
+.reading:has(> h2) > x-lt,
+.reading:has(> h2) > a,
+.reading:has(> h2) > .pullquote,
+.reading:has(> h2) > details {
+  display: block;
+  grid-column: 7 / -1;
+}
+
+/* Keep long pages moving: related ideas should read as one composition,
+   not as separate islands floating in white space. */
+.reading.section,
+.story-grid.section,
+.internship-page section.section {
+  padding-block: var(--zf-section);
+}
+.reading:has(> h2) > h2,
+.principles-page .principle-row h2,
+.work-page .project-box h2 {
+  text-wrap: balance;
+}
+
+/* About */
+.about-page #about {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, .75fr);
+  gap: clamp(42px, 7vw, 96px);
+  align-items: start;
+  padding-top: 0;
+}
+.about-page #about h2,
+.about-page #carry > h2 {
+  font-size: clamp(40px, 5vw, 68px);
+  line-height: 1;
+}
+.about-page .mission {
+  margin: 8px 0 0;
+  padding: 28px 0 0;
+  border: 0;
+  border-top: 8px solid var(--yellow);
+  border-radius: 0;
+  background: transparent;
+}
+.about-page .mission .lead { font-size: clamp(22px, 2.2vw, 29px); }
+.about-page #continuity,
+.about-page #purpose,
+.about-page #why { padding-block: clamp(44px, 5vw, 64px); }
+.about-page #carry { padding-block: var(--zf-section); }
+.about-page #carry > h2 { max-width: 15ch; margin-bottom: 42px; }
+.about-page #carry .story-grid { gap: clamp(36px, 6vw, 80px); }
+.about-page .pullquote {
+  margin-top: 22px;
+  padding: 0;
+  border: 0;
+  color: var(--zf-ink);
+  font-size: clamp(30px, 3.6vw, 48px);
+}
+.about-page .detail-note { margin-top: 28px; }
+.about-page .detail-note summary { font-weight: 600; color: var(--zf-ink); }
+
+/* Work: three projects, three distinct editorial compositions. */
+.work-page .project-box {
+  margin: 0;
+  padding: var(--zf-section) 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.work-page .page-head { padding-bottom: 34px; }
+.work-page .project-box h2 {
+  font-size: clamp(42px, 5.4vw, 72px);
+  line-height: .98;
+  letter-spacing: -.055em;
+}
+.work-page #internship {
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  gap: clamp(44px, 7vw, 96px);
+  align-items: center;
+  padding-top: 18px;
+}
+.work-page #internship figure { order: 2; }
+.work-page #internship img { aspect-ratio: 4 / 3; border-radius: 0; }
+.work-page #archive { background: transparent; }
+.work-page #archive .archive-layout {
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
+  gap: clamp(44px, 8vw, 108px);
+}
+.work-page #archive figure { margin: 0; }
+.work-page #archive img { border: 0; border-radius: 0; background: var(--zf-warm); }
+.work-page .archive-copy { max-width: 65ch; margin-top: 30px; padding: 0; }
+.work-page #research .research-layout {
+  grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+  gap: clamp(44px, 8vw, 108px);
+  align-items: center;
+}
+.work-page #research figure { order: -1; margin: 0; }
+.work-page #research img { border: 0; border-radius: 0; }
+
+/* Principles: clear sequence, large statements, no card stack. */
+.principles-page .page-head,
+.principles-page .page-head + .reading.section { max-width: none; }
+.principles-page .page-head + .reading.section {
+  margin: 0;
+  padding-block: 8px var(--zf-section);
+}
+.principles-page .principle-list { padding-block: 24px var(--zf-section); }
+.principles-page .principle-row {
+  display: grid;
+  grid-template-columns: 64px minmax(220px, .75fr) minmax(0, 1.25fr);
+  gap: clamp(24px, 4vw, 56px);
+  padding-block: clamp(28px, 3.5vw, 44px);
+  border: 0;
+}
+.principles-page .principle-row::before {
+  font-family: 'Oswald', sans-serif;
+  font-size: 28px;
+  line-height: 1;
+  color: var(--green);
+}
+.principles-page .principle-row h2 {
+  margin: 0;
+  font-size: clamp(32px, 3.8vw, 52px);
+  line-height: 1.03;
+}
+.principles-page .principle-row p { font-size: 18px; }
+.principles-page .definitions {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(28px, 5vw, 64px);
+}
+.principles-page .definitions div { padding-top: 16px; border-top: 4px solid var(--yellow); }
+
+/* Internship: documentary page with consistent image scale and readable prose. */
+.internship-page .hero { height: clamp(500px, 54vw, 720px) !important; border-radius: 0; }
+.internship-page .hero + .tricolour { margin-inline: 0; }
+.internship-page .program-opening {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px;
+  max-width: none;
+  padding-block: clamp(46px, 5vw, 64px);
+}
+.internship-page .program-opening .links { grid-column: 1 / span 4; align-self: start; }
+.internship-page .program-opening > x-en,
+.internship-page .program-opening > x-lt {
+  display: block;
+  grid-column: 6 / -1;
+  columns: auto;
+}
+.internship-page .program-opening .lead {
+  max-width: 30ch;
+  font-size: clamp(28px, 3.2vw, 44px);
+  line-height: 1.18;
+}
+.internship-page .story-grid,
+.internship-page .internship-documentary,
+.internship-page .internship-photo-pair {
+  gap: clamp(32px, 6vw, 80px);
+}
+.internship-page .story-grid.section,
+.internship-page section.section { padding-block: clamp(42px, 5vw, 62px); }
+.internship-page .internship-documentary { margin-block: 8px; }
+.internship-page #student-work { padding-top: 52px; }
+.internship-page .program-photo img { border-radius: 0; }
+.internship-page .program-photo figcaption { margin-top: 12px; max-width: 54ch; }
+.internship-page .internship-documentary { align-items: start; }
+.internship-page .student-books {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-block: 40px;
+}
+.internship-page .student-book {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.internship-page .student-book img {
+  height: 300px;
+  padding: 18px;
+  border-radius: 0;
+  background: var(--zf-wash);
+  object-fit: contain;
+}
+.internship-page .student-book h3 { margin-top: 8px; font-size: 21px; }
+
+/* Homepage: keep the full story, but give it one confident visual rhythm. */
+.journal-home .hero {
+  height: clamp(570px, 58vw, 760px) !important;
+  border-radius: 0;
+}
+.journal-home .hero + .tricolour { margin-inline: 0; }
+.journal-home .home-mission {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px;
+  padding-block: clamp(42px, 5vw, 66px) 20px;
+  align-items: start;
+}
+.journal-home .home-mission h2 {
+  grid-column: 1 / span 3;
+  margin: 6px 0 0;
+  color: var(--green);
+  font-size: clamp(24px, 2.4vw, 32px);
+  line-height: 1.15;
+}
+.journal-home .home-mission p {
+  grid-column: 4 / -1;
+  max-width: 39ch;
+  margin: 0;
+  color: var(--zf-ink);
+  font-size: clamp(28px, 3.2vw, 44px);
+  line-height: 1.18;
+  letter-spacing: -.035em;
+  text-wrap: pretty;
+}
+.journal-home .intro {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px;
+  padding-block: clamp(48px, 5vw, 68px);
+}
+.journal-home .intro .lead {
+  grid-column: 1 / span 6;
+  grid-row: 1 / span 3;
+  max-width: 20ch;
+  font-size: clamp(36px, 4.4vw, 60px);
+  line-height: 1.08;
+}
+.journal-home .intro p:not(.lead),
+.journal-home .intro > a { grid-column: 8 / -1; }
+.journal-home #work .work-intro {
+  padding: 18px 0 30px;
+  align-items: end;
+}
+.journal-home #work .work-intro h2 {
+  font-size: clamp(48px, 7vw, 96px);
+  line-height: .9;
+  letter-spacing: -.065em;
+}
+.journal-home #work .workshop-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, .8fr);
+  grid-template-rows: auto;
+  gap: clamp(38px, 7vw, 92px);
+  align-items: end;
+  padding: 0 0 var(--zf-section);
+  margin: 0;
+}
+.journal-home #work .workshop-feature > a {
+  grid-column: 1;
+  grid-row: 1;
+}
+.journal-home #work .workshop-feature .feature-copy {
+  display: block;
+  grid-column: 2;
+  grid-row: 1;
+  padding: 0 0 12px;
+}
+.journal-home #work .workshop-feature .eyebrow { margin-bottom: 18px; }
+.journal-home #work .workshop-feature h3 {
+  margin: 0 0 24px;
+  font-size: clamp(42px, 5.2vw, 72px);
+  line-height: .98;
+}
+.journal-home #work .feature-copy > x-en,
+.journal-home #work .feature-copy > x-lt { display: contents; }
+.journal-home #work .workshop-feature .feature-copy > .text-link { margin-top: 18px; }
+.journal-home .source-desk {
+  grid-template-columns: minmax(300px, .82fr) minmax(0, 1.18fr);
+  gap: clamp(44px, 8vw, 104px);
+  padding: clamp(34px, 5vw, 64px);
+  margin: 0 0 40px;
+  border: 0;
+  border-radius: 0;
+  background: var(--zf-warm);
+}
+.journal-home .source-image { padding: 0; background: transparent; }
+.journal-home .source-notes h2 { font-size: clamp(42px, 5vw, 68px); }
+.journal-home .method-note {
+  grid-template-columns: minmax(240px, .72fr) minmax(0, 1.28fr);
+  gap: clamp(40px, 7vw, 96px);
+  padding-block: 34px 58px;
+}
+.journal-home .method-note h3 { font-size: clamp(32px, 3.8vw, 50px); }
+.journal-home .work-pair {
+  gap: clamp(42px, 7vw, 96px);
+  padding-block: 0 54px;
+}
+
+/* Shared close: restrained, aligned, useful. */
+.support-section {
+  max-width: var(--zf-page);
+  margin-top: 0;
+  padding-block: clamp(40px, 4.5vw, 60px);
+  border: 0;
+}
+.support-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 24px; }
+.support-grid > div { grid-column: 1 / span 6; }
+.support-options { grid-column: 8 / -1; }
+.support-grid h2 { font-size: clamp(38px, 4.4vw, 60px); }
+.support-options a { padding-block: 13px; }
+.site-footer { max-width: var(--zf-page); padding-block: 28px 22px; }
+
+@media (max-width: 900px) {
+  .site-header,
+  .journal-home .site-header { min-height: 62px; padding-block: 10px; }
+  .brand img,
+  .journal-home .brand img { height: 28px; }
+  .site-nav,
+  .journal-home .site-nav { font-size: 14px; }
+  .langbtn,
+  .journal-home .langbtn { min-height: 34px; }
+
+  .page-head h1 { grid-column: 1 / span 5; }
+  .page-head > x-en,
+  .page-head > x-lt,
+  .jump-links { grid-column: 6 / -1; }
+
+  .about-page #about,
+  .work-page #internship,
+  .work-page #archive .archive-layout,
+  .work-page #research .research-layout { gap: 38px; }
+
+  .internship-page .student-books { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .journal-home #work .workshop-feature { grid-template-columns: 1.1fr .9fr; gap: 36px; }
+  .journal-home .source-desk { gap: 38px; padding: 34px; }
+}
+
+@media (max-width: 700px) {
+  :root { --zf-section: 48px; }
+  .wrap,
+  .hero .wrap,
+  .principles-page main > .wrap,
+  .workshop-home .intro { padding-inline: 20px; }
+
+  .page-head,
+  .reading:has(> h2),
+  .principles-page .reading:has(> h2),
+  .internship-page .program-opening,
+  .journal-home .intro { display: block; }
+  .page-head { padding-block: 46px 40px; }
+  .page-head h1 { max-width: none; margin-bottom: 26px; font-size: clamp(52px, 17vw, 76px); }
+  .page-head .lead { font-size: 23px; }
+  .jump-links { margin-top: 24px; }
+  .reading:has(> h2) > h2 { max-width: none; margin-bottom: 24px; }
+
+  .about-page #about,
+  .work-page #internship,
+  .work-page #archive .archive-layout,
+  .work-page #research .research-layout,
+  .journal-home #work .workshop-feature,
+  .journal-home .source-desk,
+  .journal-home .method-note,
+  .journal-home .work-pair,
+  .support-grid { grid-template-columns: 1fr; }
+
+  .about-page #about { gap: 34px; }
+  .about-page .mission { margin-top: 0; }
+  .about-page #carry > h2 { margin-bottom: 28px; }
+
+  .work-page .project-box { padding-block: 48px; }
+  .work-page #internship figure,
+  .work-page #research figure { order: 0; }
+
+  .principles-page .principle-row {
+    grid-template-columns: 40px 1fr;
+    gap: 14px 18px;
+  }
+  .principles-page .principle-row p { grid-column: 2; }
+  .principles-page .definitions { grid-template-columns: 1fr; }
+
+  .internship-page .hero { height: 520px !important; }
+  .internship-page .program-opening .links { margin-bottom: 30px; }
+  .internship-page .student-books { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .internship-page .student-book img { height: 220px; padding: 12px; }
+
+  .journal-home .hero { height: clamp(600px, 175vw, 720px) !important; }
+  .journal-home .home-mission { display: block; padding-block: 36px 8px; }
+  .journal-home .home-mission h2 { margin: 0 0 18px; font-size: 26px; }
+  .journal-home .home-mission p { max-width: none; font-size: 30px; }
+  .journal-home .intro .lead { max-width: none; margin-bottom: 26px; font-size: 38px; }
+  .journal-home #work .work-intro h2 { font-size: 56px; }
+  .journal-home #work .workshop-feature { display: flex; flex-direction: column; gap: 26px; }
+  .journal-home #work .workshop-feature > a { order: 0; }
+  .journal-home #work .workshop-feature .feature-copy { order: 1; padding: 0; }
+  .journal-home #work .workshop-feature h3 { font-size: 44px; }
+  .journal-home .source-desk { margin-inline: 0; padding: 26px 20px; }
+  .journal-home .source-image { max-width: 260px; margin-inline: auto; }
+  .journal-home .source-image img { height: 320px; }
+
+  .support-grid > div,
+  .support-options { grid-column: auto; }
+  .support-options { margin-top: 16px; }
+}
+
+@media (max-width: 430px) {
+  .internship-page .student-books { grid-template-columns: 1fr; }
+  .internship-page .student-book img { height: 300px; }
+}
