@@ -1,10 +1,22 @@
 # ziburiofoundation.org
 
-The public website of Žiburio Foundation, a Michigan nonprofit. Five static pages, no build step, no analytics, no third-party forms. Contact is a mailto link only. English and Lithuanian, switched in the page; the choice is kept in that visitor's own browser and sent nowhere.
+The public website of Žiburio Foundation, a Michigan nonprofit. Four active static pages, no build step, no analytics, no third-party forms. Contact is a mailto link only. English and Lithuanian, switched in the page; the choice is kept in that visitor's own browser and sent nowhere. Two former page URLs remain as local redirects so older links continue to work.
 
 Hosting: Vercel, team `lietuvaais-projects` (the Foundation's team, where lietuva.ai runs). Domain: `ziburiofoundation.org`, registered at Porkbun; the DNS record is added by Vilija.
 
 ## Status
+
+**Repetition pass, 2026-11-02 — local `focused-43`.** Mission remains on Home; its project cards now link to detail without repeating the project paragraphs. About covers institutional continuity and the unchanged commitments instead of repeating mission and activities. Our Work loses its generic lead and duplicate internship introduction; program photos, records and detailed practice remain. Removed repeated support strips from Home/About/Work; Support owns the invitation to help, while the shared contact footer remains. Pre-edit pages are saved in `docs/review-archive/before-content-focus-*.html`. EN/LT edited together; new About introduction is review copy. No deployment.
+
+**Support added at Vilija’s request, 2026-11-02.** The local menu is now Home, Our Work, About, Support. `support.html` is a short bilingual invitation to support the internship, contribute archival work, discuss collections, or collaborate, using mailto contact only. No payment flow, tax claim or publication. New Lithuanian interface prose remains review copy.
+
+**Three-page scope confirmed by Vilija, 2026-11-02.** Local `three-pages-39`: Home, Our Work, About. Internship prose/photos/six book links are retained within an expandable Our Work section; anchors open the section automatically. Principles are included on About. Old program and principles routes redirect locally to their replacements. Prior full pages are retained under `docs/review-archive/`. Verified HTML nesting, unique IDs, JavaScript syntax and program deep-link redirect. No deployment.
+
+**Spacing repair, 2026-11-02 — local `spacing-37`.** Removed offset heading/text columns and doubled section padding; headings and their prose now share a left edge. Standardized panel insets at 24px and corrected crossed About-page details/div containers so the founding statement and support appeal are independent sections. EN/LT text remains unchanged. Checked proper HTML nesting across all five pages, expanded About content on desktop, and Lithuanian mobile layout. No publication.
+
+**Unified visual system, 2026-11-02 — local preview `unified-36`.** All five pages share outer edges, heading scales, neutral card surfaces, image corners, navy buttons and section spacing. Longer About and program passages use heading/text columns that stack on mobile. All EN/LT text blocks are byte-for-byte unchanged from the preceding local pass. Desktop and mobile previews and language switching were inspected. No commit, push or deployment.
+
+**Coherence pass, 2026-11-02 — local only.** At Vilija’s direction, the homepage now gives the mission, three linked project introductions, and the restored Lietuvos Kanklės context. Project history stays on Our Work and the internship page; institutional background, founding statement and full support appeal stay on About. The longer inheritance essay is expandable without changing its wording. Principles leads with the four unchanged commitments and definitions, followed by expandable technology context. Repeated support appeals become a short contact strip. Shared navigation, navy buttons and neutral surfaces now apply across all five pages; green accents and the decorative tricolour rule are removed, superseding the earlier visual directions below. The original mark and photographs are unchanged. New Lithuanian teaser/interface wording is review copy; existing independent Lithuanian narratives are retained. No push, merge or deployment.
 
 **Live.** The `robots` meta lines were removed at go-live (2026-10-20).
 
@@ -16,11 +28,12 @@ Hosting: Vercel, team `lietuvaais-projects` (the Foundation's team, where lietuv
 
 | File | What it holds |
 |---|---|
-| `index.html` | Original hero, editorial introduction, enlarged student feature, inspectable archival source workbench, archive and research entries |
-| `about.html` | Foundation background, mission, cultural continuity and context, inheritance essay, full founding statement in an expandable section |
-| `work.html` | Internship feature, archive catalogue and figures, Lietuva.ai, parish research; distinct layouts and section links |
-| `skaitmeniniai-knygnesiai.html` | Program, archive work, evidence and learning, community role; the original dated Cardinal Makrickas passage remains expandable |
-| `principles.html` | The four principles and Source · Inference · Authority |
+| `index.html` | Photo hero, mission, short introductions to the internship, Archive, and parish research, plus one collection example |
+| `work.html` | The three projects, with the full internship narrative, photographs, workflow, and student book links |
+| `about.html` | Foundation background, institutional continuity, the four commitments, and Source · Inference · Authority |
+| `support.html` | A short bilingual invitation to support, contribute collections, or collaborate; mailto contact only |
+| `skaitmeniniai-knygnesiai.html` | Redirect to the internship on Our Work |
+| `principles.html` | Redirect to the commitments on About |
 
 The original pages were generated from the Claude Design canvas "Žiburio Foundation site" (`claude.ai/artifact/Qr7YNA5jQ3sXV5ykYMWgtm`) by `build_site.py`, which lives with the canvas in the session scratchpad, not in this repository. The October 21 revision is edited directly here, with shared `site.css` and `site.js`; there is still no build step. Re-exporting the old canvas would overwrite the new layouts and copy. Reconcile changes rather than replacing these files.
 
@@ -60,9 +73,29 @@ New EN/LT paragraphs make the previously implicit points explicit and add a ligh
 
 ### Local review
 
+**Mission prominence, Vilija, 2026-10-25 — local only:** the homepage now places the existing mission from About directly below the photo hero, with a clear “Our mission” heading. Both language versions reuse their existing wording; no new translation or mission wording is introduced. The full introductory explanation and all other substantive copy remain in place. This responds to her direction to keep the detail while making the Foundation's purpose easy to find. No push, merge or deployment.
+
+**Homepage journal study, Vilija, 2026-10-23 — local only:** `home-journal.css` is loaded only by `index.html`, leaving other page layouts intact. The internship becomes a headline-led editorial spread; the book's historical context and compact metadata stand separately from the technology explanation. White surfaces replace the homepage's rounded panels, with the original fonts, wordmark, photographs, hero copy and tricolour retained. Existing independent EN/LT copy is unchanged. Reference research informed hierarchy and pacing, not copied assets or content. No push, merge or deployment authorized.
+
+**Voice pass, Vilija, 2026-10-22:** replace abstract introductory/promotional wording in homepage and Our Work teasers and English program opening/community sections with concrete descriptions. Tighten the EN/LT review explanation without losing uncertainty or publication-authority limits. Newly drafted Lithuanian teasers revised separately. Canonical hero, mission, principles, founding statement and independently sourced Lithuanian narrative remain intact. No invented student quotes or experiences. Local only.
+
+**Visual style refinement, Vilija, 2026-10-22:** warm paper background, restrained pale panels, soft image corners, consistent link treatment and lighter headings. Long narrative sections place headings beside independently preserved EN/LT text on desktop, stacking on mobile, to use the right-hand space intentionally. Blog remains deferred. All changes are local review work, not publication approval.
+
+**Editorial refinement, Vilija, 2026-10-22:** blog deferred; no empty blog link or invented posts. `editorial.css` provides a shared layout layer across all five pages: consistent outer edges and two-column grids, left-aligned reading sections, restrained type sizes and monospace metadata, compact project panels, captions separated by fine rules, and a quieter book feature without its oversized decorative year. Existing brand, photo heroes, independently authored EN/LT text, and tricolour remain. Cohere's supplied article is a hierarchy reference, not copied design or content. Local review only.
+
+**Hero focus, Vilija, 2026-10-22:** the English subline now leads with cultural continuity through language, faith, knowledge, institutions and young people, using the wording discussed and approved in this chat. The independently authored Lithuanian hero already focuses on cultural sources, institutions and the next generation rather than AI, so its wording is retained. Technology remains explained in the body. Local review only; no push or publication.
+
+**Homepage book significance, Vilija, 2026-10-21:** replace generic “A page is a beginning” text with a short EN/LT explanation of Lietuvos Kanklės as a poetry collection published in Tilžė during the press ban. Sources: [Mažosios Lietuvos enciklopedija, Vilius Kalvaitis](https://www.mle.lt/straipsniai/vilius-kalvaitis), [VLE, Lithuanian press ban](https://www.vle.lt/straipsnis/lietuviu-spaudos-draudimas/), and [VLE, Tilžė printing houses](https://www.vle.lt/straipsnis/tilzes-spaustuves/). The second paragraph is editorial interpretation of that context, not evidence of this copy's ownership, transport or use. No claim that this specific copy was smuggled. Do not confuse this collection with Kudirka's similarly named Kanklės. Both language versions are review copy; local only.
+
+**Count removal, Vilija, 2026-10-21:** removed the 326/513 catalogue tallies and their dated-snapshot note from Our Work, plus the repeated tally in the Lithuanian homepage summary. Other dates and numbers remain unchanged. This supersedes earlier notes describing these counts as public snapshot figures. No merge or deployment performed.
+
+**Internship cross-links and repetition, Vilija, 2026-10-21:** Home now provides a short invitation; Our Work retains its project box with a one-paragraph overview instead of repeating the program history and workflow. About retains its institutional purpose and links directly to the program. Principles retains its technology commitments and links to the actual page-review explanation. The full program narrative, photographs and book records remain on `skaitmeniniai-knygnesiai.html`. Both languages edited; historical/founding source passages preserved. Local only; no push or deployment.
+
+**Internship consolidation, Vilija, 2026-10-21 — local only:** the Foundation program page now carries the Archive's documentary sequence and six book links, sourced from `ziburio-archive/app/internship/content.tsx`. Copied already-public program photos: `archive-sorting.jpg`, `IMG_6802.jpeg` (as `archive-sorting-notes.jpeg`), and `skaitmeniniai-knygnesiai-books.jpeg` (as `students-with-books.jpeg`). Student-photo consent is recorded above; these are not the restricted diary or 1938 Knygnešys images. Six cover URLs, record IDs, titles and dates follow the Archive source; covers remain on its public storage. New bilingual captions avoid claiming all six books date from the press ban. Foundation attribution follows Vilija's direction; the school's origin remains in the narrative. Catalogue records and review/rights authority stay with the Archive. No Archive routes or live links changed: its return link awaits Foundation publication. New Lithuanian captions remain review copy.
+
 Serve this directory with `python3 -m http.server 8766 --bind 127.0.0.1` and open `http://127.0.0.1:8766`. The preview stays on this computer.
 
-`scripts/check-site.cjs` uses Playwright to check all five pages in EN and LT at 360, 390, 768, and 1440px. It checks language visibility/persistence, working navigation, images, overflow, headings, internal anchors, retained external links, the home hero with Vilija's requested English revision, and the full founding statement. It also checks navigation without JavaScript and language switching when storage is blocked. Screenshots go to a temporary directory, not the repository.
+`scripts/check-site.cjs` uses Playwright to check the four active pages in EN and LT at 360, 390, 768, and 1440px. It checks language visibility/persistence, four-item navigation, images, overflow, headings, internal anchors, approved external links, the two compatibility redirects, the home hero with Vilija's requested English revision, the principles, and the Support invitation. It also proves the retired long-form founding copy remains in `docs/review-archive/`, checks navigation without JavaScript, and checks language switching when storage is blocked. Screenshots go to a temporary directory, not the repository.
 
 Run with `node scripts/check-site.cjs` where Playwright is available (or set `NODE_PATH` to its existing package directory). `CHROME_EXECUTABLE` can select an installed Chrome binary; `SITE_URL` can override the localhost URL. This script never publishes anything.
 

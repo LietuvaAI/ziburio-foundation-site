@@ -9,17 +9,22 @@ const { execFileSync } = require('node:child_process');
 const root = path.resolve(__dirname, '..');
 const base = process.env.SITE_URL || 'http://127.0.0.1:8766';
 const output = process.env.QA_OUTPUT || fs.mkdtempSync(path.join(os.tmpdir(), 'ziburio-review-'));
-const pages = ['index', 'about', 'work', 'skaitmeniniai-knygnesiai', 'principles'];
+const pages = ['index', 'about', 'work', 'support'];
+const sourcePages = ['index', 'about', 'work', 'skaitmeniniai-knygnesiai', 'principles'];
+const redirects = ['skaitmeniniai-knygnesiai', 'principles'];
 const sourceRef = process.env.SOURCE_REF || '8253480'; // Original five-page launch; keep the audit stable after committing.
 const normalize = text => text.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
 // Vilija explicitly approved the Lithuanian name change on 2026-10-21.
 const approvedLtName = text => text.replaceAll('Žiburio Foundation', 'Žiburio Fondas');
 
 (async () => {
-  const original = Object.fromEntries(pages.map(name => [name, execFileSync('git', ['show', `${sourceRef}:${name}.html`], { cwd: root, encoding: 'utf8' })]));
+  const original = Object.fromEntries(sourcePages.map(name => [name, execFileSync('git', ['show', `${sourceRef}:${name}.html`], { cwd: root, encoding: 'utf8' })]));
   const updated = Object.fromEntries(pages.map(name => [name, fs.readFileSync(path.join(root, `${name}.html`), 'utf8')]));
+  const redirectPages = Object.fromEntries(redirects.map(name => [name, fs.readFileSync(path.join(root, `${name}.html`), 'utf8')]));
+  const archived = fs.readdirSync(path.join(root, 'docs', 'review-archive')).filter(name => name.endsWith('.html')).map(name => fs.readFileSync(path.join(root, 'docs', 'review-archive', name), 'utf8')).join(' ');
   const allCopy = normalize(Object.values(updated).join(' '));
-  assert(!/CultureNet|\bLabs\b|501\s*\(|deductib/i.test(allCopy), 'Unapproved entity or tax language on public pages');
+  const retainedCopy = normalize(`${Object.values(updated).join(' ')} ${archived}`);
+  assert(!/CultureNet|\bLabs\b|Lietuva\.ai|501\s*\(|deductib/i.test(allCopy), 'Unapproved entity or tax language on public pages');
   assert(!Object.values(updated).some(html => /<form\b/i.test(html)), 'Unexpected form');
   const protectedLt = [...original.principles.matchAll(/<x-lt>([\s\S]*?)<\/x-lt>/g)].map(match => match[1]).filter(text => text.includes('Šaltinis išlaiko savo galią.') || text.includes('Trys dalykai niekada'));
   const footer = original.index.match(/<footer[\s\S]*?<\/footer>/)[0];
@@ -28,24 +33,48 @@ const approvedLtName = text => text.replaceAll('Žiburio Foundation', 'Žiburio 
     const paragraphs = [...block.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/g)].map(match => match[1]);
     for (const text of paragraphs.length ? paragraphs : [block]) {
       if (/^\d+$/.test(normalize(text))) continue; // Display numbers now come from CSS counters.
-      assert(allCopy.includes(normalize(approvedLtName(text))), `Protected Lithuanian changed: ${normalize(text)}`);
+      assert(retainedCopy.includes(normalize(approvedLtName(text))), `Protected Lithuanian lost: ${normalize(text)}`);
     }
   }
   const config = JSON.parse(fs.readFileSync(path.join(root, 'vercel.json'), 'utf8'));
   assert.equal(config.git.deploymentEnabled['codex/foundation-design-review-2026-10-21'], false, 'Review branch could auto-deploy');
   const externalLinks = html => [...html.matchAll(/<a\b[^>]*href="((?:https:|mailto:)[^"]+)"/g)].map(match => match[1]);
   const currentLinks = new Set(Object.values(updated).flatMap(externalLinks));
-  for (const link of new Set(Object.values(original).flatMap(externalLinks))) assert(currentLinks.has(link), `Lost link: ${link}`);
+  const expectedNav = ['index.html', 'work.html', 'about.html', 'support.html'];
+  for (const name of pages) {
+    assert(!updated[name].includes('https://archyvas.ziburioltmokykla.org/internship'), `Old internship destination: ${name}`);
+    for (const href of expectedNav) assert(updated[name].includes(`href="${href}"`), `Missing navigation link ${href}: ${name}`);
+    for (const match of updated[name].matchAll(/href="([a-z-]+)\.html#([^"]+)"/g)) {
+      assert(updated[match[1]]?.includes(`id="${match[2]}"`), `Missing cross-page anchor: ${match[0]}`);
+    }
+  }
+  assert(updated.work.includes('id="internship"'), 'Internship section missing from Our work');
+  assert(updated.work.includes('id="student-work"'), 'Student work missing from Our work');
+  assert(redirectPages.principles.includes('about.html#principles'), 'Principles redirect is incorrect');
+  assert(redirectPages['skaitmeniniai-knygnesiai'].includes('work.html#program'), 'Internship redirect is incorrect');
+  for (const link of new Set(Object.values(original).flatMap(externalLinks))) {
+    // Approved consolidation: the program narrative now lives on the Foundation.
+    if (link === 'https://archyvas.ziburioltmokykla.org/internship') {
+      assert(updated.work.includes('id="student-work"'));
+      continue;
+    }
+    if (link === 'https://lietuva.ai/' || link === 'https://lietuva.ai') continue; // Explicitly removed from the public Foundation site.
+    if (link.startsWith('mailto:')) {
+      assert([...currentLinks].some(current => current.split('?')[0] === link.split('?')[0]), `Lost contact address: ${link}`);
+      continue;
+    }
+    assert(currentLinks.has(link), `Lost link: ${link}`);
+  }
   const founding = original.about.match(/<section id="why"[\s\S]*?<\/section>/)[0];
   for (const lang of ['en', 'lt']) {
     const passage = [...founding.matchAll(new RegExp(`<x-${lang}>([\\s\\S]*?)<\\/x-${lang}>`, 'g'))].at(-1)[1];
     for (const paragraph of passage.matchAll(/<p[^>]*>([\s\S]*?)<\/p>/g)) {
-      assert(normalize(updated.about).includes(normalize(lang === 'lt' ? approvedLtName(paragraph[1]) : paragraph[1])), `Founding statement changed (${lang})`);
+      assert(retainedCopy.includes(normalize(lang === 'lt' ? approvedLtName(paragraph[1]) : paragraph[1])), `Founding statement lost (${lang})`);
     }
   }
   const oldHero = original.index.match(/<section id="top"[\s\S]*?<\/section>/)[0];
   const newHero = updated.index.match(/<section id="top"[\s\S]*?<\/section>/)[0];
-  const requestedHeroRevision = oldHero.replace('Preserving the sources of Lithuanian cultural memory, strengthening the institutions that transmit it, and preparing a new generation to carry that inheritance into the age of artificial intelligence.', 'Carrying Lithuanian cultural memory into the age of artificial intelligence—through the sources, institutions, and people who give it meaning, and a new generation ready to make it their own.');
+  const requestedHeroRevision = oldHero.replace('Preserving the sources of Lithuanian cultural memory, strengthening the institutions that transmit it, and preparing a new generation to carry that inheritance into the age of artificial intelligence.', 'Carrying Lithuanian cultural memory forward—through the language, faith, knowledge, and institutions that sustain it, and the young people who will shape what comes next.');
   assert.equal(normalize(newHero), normalize(requestedHeroRevision), 'Unexpected change to hero copy outside the requested English reframing');
 
   const browser = await chromium.launch({ headless: true, ...(process.env.CHROME_EXECUTABLE ? { executablePath: process.env.CHROME_EXECUTABLE } : {}) });
@@ -88,11 +117,15 @@ const approvedLtName = text => text.replaceAll('Žiburio Foundation', 'Žiburio 
           if (width <= 900) {
             await page.locator('.menu-button').click();
             assert(await page.locator('#site-nav').isVisible(), 'Mobile menu did not open');
-            assert.equal(await page.locator('#site-nav a:visible').count(), 5);
+            assert.equal(await page.locator('#site-nav a:visible').count(), 4);
             await page.keyboard.press('Escape');
             assert(!(await page.locator('#site-nav').isVisible()), 'Mobile menu did not close');
           }
-          if (name === 'index') assert.equal(await page.locator('.hero a[href="about.html"]').evaluate(el => getComputedStyle(el).backgroundColor), 'rgba(0, 0, 0, 0)', 'Outlined hero link lost its transparent background');
+          if (name === 'index') {
+            const heroLink = await page.locator('.hero a[href="about.html"]').evaluate(el => ({ background: getComputedStyle(el).backgroundColor, color: getComputedStyle(el).color }));
+            assert.equal(heroLink.color, 'rgb(255, 255, 255)', 'Secondary hero link lost its white label');
+            assert(!heroLink.background.includes('0, 106, 68'), 'Rejected green returned to the hero action');
+          }
           await page.evaluate(() => document.activeElement?.blur());
           if (width === 390 || width === 1440) await page.screenshot({ path: path.join(output, `${name}-${lang}-${width}.png`), fullPage: true, animations: 'disabled' });
           if (name === 'index' && (width === 390 || width === 1440)) await page.locator('.brand').screenshot({ path: path.join(output, `wordmark-${lang}-${width}.png`) });
@@ -103,12 +136,11 @@ const approvedLtName = text => text.replaceAll('Žiburio Foundation', 'Žiburio 
     await page.goto(`${base}/index.html`);
     assert.equal(await page.locator('html').getAttribute('lang'), 'lt', 'Language choice lost across pages');
     await page.goto(`${base}/about.html`);
-    await page.locator('summary').first().click();
-    assert.equal(await page.locator('details').first().getAttribute('open'), '');
-    assert((await page.locator('details').first().innerText()).includes('Be kalbos nėra tautos.'));
-    await page.locator('#support-statement summary').click();
-    assert((await page.locator('#support-statement').innerText()).includes('Ateikite paremti darbo, kurį perims kita karta.'));
-    await page.screenshot({ path: path.join(output, 'about-lt-expanded.png'), fullPage: true });
+    assert((await page.locator('main').innerText()).includes('Trys dalykai niekada nesuplaukia į vieną'));
+    assert((await page.locator('main').innerText()).includes('Šaltinis išlaiko savo galią.'));
+    await page.goto(`${base}/support.html`);
+    assert((await page.locator('main').innerText()).includes('Ateikite paremti darbo, kurį perims kita karta.'));
+    await page.screenshot({ path: path.join(output, 'support-lt.png'), fullPage: true });
     assert.deepEqual(errors, [], 'Browser JavaScript errors');
     const noJS = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
     const fallback = await noJS.newPage();
@@ -122,6 +154,6 @@ const approvedLtName = text => text.replaceAll('Žiburio Foundation', 'Žiburio 
     await privatePage.locator('.langbtn[data-l="lt"]').click();
     assert.equal(await privatePage.locator('html').getAttribute('lang'), 'lt', 'Language switch requires localStorage');
     await noStorage.close();
-    console.log(JSON.stringify({ passed: results.length, languages: ['en', 'lt'], widths: [360, 390, 768, 1440], checks: ['language isolation', 'image loading', 'heading structure', 'overflow', 'links', 'mobile menu', 'language persistence', 'expanded founding and support statements', 'no-JS navigation', 'blocked-storage switching', 'hero matches requested English reframing; Lithuanian unchanged', 'founding statement intact', 'protected Lithuanian retained', 'no restricted public claims or forms', 'review branch auto-deployment disabled', 'original external links retained'], screenshots: output }, null, 2));
+    console.log(JSON.stringify({ passed: results.length, languages: ['en', 'lt'], widths: [360, 390, 768, 1440], checks: ['language isolation', 'image loading', 'heading structure', 'overflow', 'links', 'four-item mobile menu', 'language persistence', 'principles and support copy', 'no-JS navigation', 'blocked-storage switching', 'hero matches requested English reframing; Lithuanian unchanged', 'retired founding copy retained in review archive', 'protected Lithuanian retained', 'no restricted public claims or forms', 'review branch auto-deployment disabled', 'approved external links retained'], screenshots: output }, null, 2));
   } finally { await browser.close(); }
 })().catch(error => { console.error(error); process.exitCode = 1; });
