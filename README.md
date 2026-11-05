@@ -141,6 +141,22 @@ Her direction across 2026-10-15 → 19: the original Žiburio mark, "tech and cu
 - No analytics that send data anywhere; no third-party forms. `localStorage` holds only the visitor's language choice.
 - Branch and PR flow; never push `main` directly. Git identity `LietuvaAI` / `vilija@lietuva.ai`.
 
+## Share cards (Open Graph)
+
+`index`, `about`, `work` and `support` each carry Open Graph and Twitter tags, a `description` and a `canonical` link. Titles and descriptions are the pages' own sentences, not new copy. The two redirect pages carry none, by design.
+
+The share image is `assets/share.jpg`, 1200x630. It is not hand-made: `tools/share-card.html` renders it from the site's own stylesheet, fonts and hero photograph, so it stays in step with the design. To regenerate after a design change, serve the repo and screenshot that file at twice the size, then downsample:
+
+```
+python3 -m http.server 8802 --directory .
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --disable-gpu \
+  --hide-scrollbars --force-device-scale-factor=2 --window-size=1200,630 \
+  --screenshot=/tmp/zf-share.png http://localhost:8802/tools/share-card.html
+python3 -c "from PIL import Image; Image.open('/tmp/zf-share.png').convert('RGB').resize((1200,630), Image.LANCZOS).save('assets/share.jpg', quality=88, optimize=True, progressive=True)"
+```
+
+If the hero photograph or the wordmark changes, re-render; otherwise the card will quietly show the old design.
+
 ## Going live
 
 1. Vilija confirms the copy, including the constructed Lithuanian listed above.
