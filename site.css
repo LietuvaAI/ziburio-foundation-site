@@ -483,7 +483,7 @@ h2,.section-heading h2,.mission-overview h2,.book-story h2,.project-box h2{font-
 .foundation-home .foundation-identity-hero{
  position:relative;
  overflow:hidden;
- height:clamp(500px,50vw,720px)!important;
+ height:clamp(190px,18vw,240px)!important;
  background:#5C6168;
  color:#fff;
  isolation:isolate;
@@ -491,11 +491,11 @@ h2,.section-heading h2,.mission-overview h2,.book-story h2,.project-box h2{font-
 .foundation-identity-hero .hero-mark{
  position:absolute;
  z-index:-1;
- width:clamp(560px,58vw,880px);
+ width:clamp(370px,34vw,510px);
  height:auto;
  top:50%;
- right:clamp(-230px,-10vw,-110px);
- transform:translateY(-49%);
+ right:clamp(-145px,-8vw,-76px);
+ transform:translateY(-50%);
  filter:brightness(0) invert(1);
  opacity:.1;
  pointer-events:none;
@@ -504,9 +504,10 @@ h2,.section-heading h2,.mission-overview h2,.book-story h2,.project-box h2{font-
 .foundation-identity-hero .hero-shell{
  position:relative;
  height:100%;
- display:grid;
- grid-template-rows:auto 1fr auto;
- padding-block:clamp(38px,4.5vw,64px) clamp(40px,4vw,58px);
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ padding-block:28px;
 }
 .foundation-identity-hero .hero-wordmark{
  display:flex;
@@ -514,57 +515,14 @@ h2,.section-heading h2,.mission-overview h2,.book-story h2,.project-box h2{font-
  gap:.28em;
  margin:0;
  font-family:'Hanken Grotesk',system-ui,sans-serif;
- font-size:clamp(20px,2vw,29px);
+ font-size:clamp(34px,4vw,58px);
  line-height:1;
- letter-spacing:.045em;
+ letter-spacing:.025em;
  color:#fff;
  white-space:nowrap;
 }
 .foundation-identity-hero .hero-wordmark strong{font-weight:700}
 .foundation-identity-hero .hero-wordmark span{font-weight:300}
-.foundation-identity-hero .hero-message{
- align-self:center;
- max-width:min(760px,64vw);
- padding-block:28px;
-}
-.foundation-home .foundation-identity-hero .hero-message h1{
- margin:0;
- max-width:9em;
- font-size:clamp(50px,6.2vw,88px)!important;
- line-height:.93;
- font-weight:500;
- letter-spacing:-.05em;
- text-wrap:balance;
-}
-html[lang="lt"] .foundation-home .foundation-identity-hero .hero-message h1{
- max-width:12.5em;
- font-size:clamp(36px,4.6vw,64px)!important;
- line-height:1;
- letter-spacing:-.04em;
-}
-.foundation-identity-hero .hero-message p{
- max-width:38em;
- margin:20px 0 0;
- font-size:clamp(16px,1.35vw,20px);
- line-height:1.5;
- color:rgba(255,255,255,.92);
-}
-.foundation-identity-hero .hero-actions{display:flex;flex-wrap:wrap;gap:10px}
-.foundation-home .foundation-identity-hero .hero-actions .pill{font-weight:650}
-.foundation-home .foundation-identity-hero .hero-actions .hero-primary{
- background:#fff;
- color:#0E1426!important;
-}
-.foundation-home .foundation-identity-hero .hero-actions .hero-secondary{
- background:transparent;
- border-color:rgba(255,255,255,.7);
- color:#fff!important;
-}
-.foundation-home .foundation-identity-hero .hero-actions .pill:hover{
- background:#0E1426;
- border-color:#0E1426;
- color:#fff!important;
-}
 .foundation-identity-hero .hero-tricolour{
  position:absolute;
  z-index:2;
@@ -579,18 +537,12 @@ html[lang="lt"] .foundation-home .foundation-identity-hero .hero-message h1{
 .foundation-identity-hero .hero-tricolour span:nth-child(2){background:#006A44}
 .foundation-identity-hero .hero-tricolour span:nth-child(3){background:#C1272D}
 @media(max-width:700px){
- .foundation-home .foundation-identity-hero{height:clamp(560px,145vw,680px)!important}
- .foundation-identity-hero .hero-shell{padding-block:34px 38px}
- .foundation-identity-hero .hero-mark{width:540px;right:-260px;top:48%;opacity:.09}
- .foundation-identity-hero .hero-message{max-width:100%;padding-block:26px}
- .foundation-home .foundation-identity-hero .hero-message h1{font-size:clamp(45px,14vw,66px)!important;max-width:7em}
- html[lang="lt"] .foundation-home .foundation-identity-hero .hero-message h1{font-size:clamp(33px,9.2vw,48px)!important;max-width:11em}
- .foundation-identity-hero .hero-message p{font-size:16px;line-height:1.45;max-width:32em}
+ .foundation-home .foundation-identity-hero{height:170px!important}
+ .foundation-identity-hero .hero-shell{padding-block:24px}
+ .foundation-identity-hero .hero-mark{width:360px;right:-190px;opacity:.09}
+ .foundation-identity-hero .hero-wordmark{font-size:clamp(26px,8.4vw,38px)}
 }
 @media(max-width:420px){
- .foundation-identity-hero .hero-wordmark{font-size:19px}
- .foundation-home .foundation-identity-hero .hero-message h1{font-size:44px!important}
- html[lang="lt"] .foundation-home .foundation-identity-hero .hero-message h1{font-size:34px!important}
- .foundation-identity-hero .hero-actions{gap:8px}
- .foundation-home .foundation-identity-hero .hero-actions .pill{padding-inline:16px}
+ .foundation-home .foundation-identity-hero{height:150px!important}
+ .foundation-identity-hero .hero-wordmark{font-size:25px}
 }
